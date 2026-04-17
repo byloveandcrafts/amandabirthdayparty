@@ -383,10 +383,11 @@ nav{
   animation:fadeUp 1.2s .15s ease both;
 }
 .hero-name{
-  font-family:'Dancing Script',cursive;font-weight:400;
-  font-size:clamp(32px,7vw,62px);
+  font-family:'Dancing Script',cursive;font-weight:700;
+  font-size:clamp(58px,13vw,120px);
   color:var(--rose);line-height:1;
   animation:fadeUp 1s .35s ease both;
+  text-shadow: 0 2px 20px rgba(240,98,146,0.25);
 }
 .hero-surname{
   font-family:'Quicksand',sans-serif;font-weight:400;
@@ -497,6 +498,7 @@ nav{
   width: min(720px, 96vw);
   position: relative;
   z-index: 1;
+  min-width: 0;
 }
 .ibp-ticket {
   width: 100%;
@@ -788,21 +790,152 @@ nav{
    FOOTER
 ════════════════════════════════════════ */
 .footer-section{
-  text-align:center;padding:70px 20px 100px;
-  background:var(--text);
+  text-align:center;
+  padding:80px 40px 110px;
+  background: linear-gradient(160deg, #4A1942 0%, #7B2868 40%, #C2185B 100%);
   position:relative;overflow:hidden;
 }
-.footer-rule {
-  width: 40px;
-  height: 1px;
-  background: rgba(255,255,255,0.2);
-  margin: 0 auto 28px;
+.footer-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  pointer-events: none;
 }
-.footer-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(18px,3.5vw,28px);color:rgba(255,255,255,0.85);max-width:480px;margin:0 auto 24px;line-height:1.6;font-weight:300;position:relative;z-index:1;}
-.footer-name{font-family:'Quicksand',sans-serif;font-weight:600;font-size:9px;letter-spacing:6px;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:8px;position:relative;z-index:1;}
-.footer-date{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(255,255,255,0.3);font-style:italic;position:relative;z-index:1;}
-.footer-plane{font-size:18px;margin:20px 0 6px;opacity:0.3;position:relative;z-index:1;}
-.footer-copy{font-family:'Quicksand',sans-serif;font-size:8px;letter-spacing:3px;color:rgba(255,255,255,0.2);position:relative;z-index:1;}
+.footer-section::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(244,143,177,0.6), var(--rose), rgba(244,143,177,0.6), transparent);
+  pointer-events: none;
+}
+.footer-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.footer-monogram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(244,143,177,0.45);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  font-family: 'Dancing Script', cursive;
+  font-size: 32px;
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 28px;
+  box-shadow: 0 0 0 8px rgba(244,143,177,0.1), 0 0 0 16px rgba(244,143,177,0.05);
+}
+.footer-tagline {
+  font-family: 'Special Elite', monospace;
+  font-size: 8px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: rgba(244,143,177,0.65);
+  margin-bottom: 24px;
+}
+.footer-rule {
+  display: none;
+}
+.footer-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:clamp(17px,3.2vw,25px);
+  color:rgba(255,255,255,0.90);
+  max-width:460px;
+  margin:0 auto 32px;
+  line-height:1.75;
+  font-weight:300;
+  position:relative;z-index:1;
+}
+.footer-quote::before {
+  content: '"';
+  display: block;
+  font-size: 52px;
+  line-height: 0.8;
+  color: rgba(244,143,177,0.38);
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 4px;
+}
+.footer-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 200px;
+  margin: 0 auto 28px;
+  position: relative;
+  z-index: 1;
+}
+.footer-divider::before, .footer-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(244,143,177,0.3);
+}
+.footer-divider-icon { color: rgba(244,143,177,0.65); font-size: 13px; }
+.footer-name{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(26px,5vw,40px);
+  color:rgba(255,255,255,0.95);
+  margin-bottom:12px;
+  position:relative;z-index:1;
+  font-weight:600;
+  letter-spacing:0.5px;
+}
+.footer-date{
+  font-family:'Special Elite',monospace;
+  font-size:10px;
+  letter-spacing:2px;
+  color:rgba(244,143,177,0.6);
+  position:relative;z-index:1;
+  line-height:2;
+  font-style: normal;
+}
+.footer-tags {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 28px 0;
+  position: relative;
+  z-index: 1;
+}
+.footer-tag {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(244,143,177,0.22);
+  border-radius: 30px;
+  padding: 7px 18px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 8.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(244,143,177,0.7);
+  font-weight: 600;
+}
+.footer-plane{display:none;}
+.footer-copy{
+  font-family:'Quicksand',sans-serif;
+  font-size:8px;
+  letter-spacing:3px;
+  color:rgba(255,255,255,0.22);
+  position:relative;z-index:1;
+  margin-top: 4px;
+}
+@media(max-width:768px) {
+  .footer-section { padding: 60px 20px 100px; }
+  .footer-quote { font-size: clamp(15px, 4.5vw, 19px); }
+  .footer-name { font-size: clamp(26px, 8vw, 36px); }
+  .footer-tags { gap: 8px; }
+  .footer-tag { font-size: 8px; padding: 6px 14px; }
+  .footer-monogram { width: 62px; height: 62px; font-size: 26px; margin-bottom: 22px; }
+}
 
 /* RSVP BAR */
 .rsvp-bar{
@@ -1414,7 +1547,40 @@ nav{
 #rsvp.section-card {
   padding: 60px 40px;
   text-align: center;
+  background: rgba(255, 255, 255, 0.18) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
 }
+#rsvp .section-label { color: rgba(255, 255, 255, 0.85); }
+#rsvp .section-title { color: #fff; text-shadow: 0 2px 12px rgba(180,0,90,0.25); }
+#rsvp .rsvp-note-elegant { color: rgba(255, 255, 255, 0.88); }
+#rsvp .rsvp-deadline-label { color: rgba(255, 255, 255, 0.75); }
+#rsvp .rsvp-deadline-date { color: #fff; font-weight: 600; }
+#rsvp .rsvp-elegant-method { color: rgba(255, 255, 255, 0.7); }
+#rsvp .rsvp-elegant-name { color: #fff; }
+#rsvp .rsvp-footer-note { color: rgba(255, 255, 255, 0.75); }
+#rsvp .rsvp-elegant-arrow { color: rgba(255, 255, 255, 0.7); }
+#rsvp .rsvp-elegant-card {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 20px rgba(180,0,90,0.12), inset 0 1px 0 rgba(255,255,255,0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+#rsvp .rsvp-elegant-card:hover {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+#rsvp .rsvp-deadline-badge {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+#rsvp .rsvp-elegant-divider { color: rgba(255, 255, 255, 0.6); }
+#rsvp .rsvp-elegant-divider::before,
+#rsvp .rsvp-elegant-divider::after { background: rgba(255, 255, 255, 0.25); }
+#rsvp .divider::before, #rsvp .divider::after { background: rgba(255, 255, 255, 0.35); }
+#rsvp .divider-heart { color: rgba(255, 255, 255, 0.85); }
 
 /* wrapper to center the cards */
 .cards-wrapper {
@@ -1648,6 +1814,197 @@ nav{
   transform: scale(1.3);
 }
 
+/* ════════════════════════════════════════
+   ENTOURAGE SECTION
+════════════════════════════════════════ */
+.entourage-section.section-card {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+/* ── Debutante & Escort ── */
+.entourage-leads {
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 600px;
+  margin: 0 auto 52px;
+  background: linear-gradient(135deg, rgba(255,240,245,0.9), rgba(252,228,236,0.9));
+  border: 1px solid rgba(244,143,177,0.3);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(233,30,140,0.08);
+}
+.entourage-lead-card {
+  flex: 1;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+.entourage-lead-card:first-child {
+  border-right: 1px solid rgba(244,143,177,0.25);
+}
+.lead-role-badge {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--rose);
+  background: rgba(240,98,146,0.1);
+  border: 1px solid rgba(240,98,146,0.2);
+  border-radius: 30px;
+  padding: 5px 14px;
+  margin-bottom: 4px;
+}
+.lead-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.3;
+}
+.lead-title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-top: 2px;
+}
+.lead-icon {
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+/* ── Entourage groups: Roses / Candles / Toasts ── */
+.entourage-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.entourage-group {
+  position: relative;
+}
+.entourage-group-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  justify-content: center;
+}
+.entourage-group-header::before,
+.entourage-group-header::after {
+  content: '';
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(244,143,177,0.5));
+}
+.entourage-group-header::after {
+  background: linear-gradient(to left, transparent, rgba(244,143,177,0.5));
+}
+.entourage-group-icon {
+  font-size: 22px;
+}
+.entourage-group-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text);
+  letter-spacing: 0.5px;
+}
+.entourage-group-num {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+/* Name grids */
+.entourage-names-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 16px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.entourage-names-grid.two-col {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 560px;
+}
+.entourage-names-grid.wide {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 800px;
+}
+.ent-name-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.65);
+  border: 1px solid rgba(244,143,177,0.18);
+  border-radius: 12px;
+  padding: 10px 14px;
+  text-align: left;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.ent-name-item:hover {
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 4px 14px rgba(233,30,140,0.08);
+}
+.ent-name-num {
+  font-family: 'Special Elite', monospace;
+  font-size: 10px;
+  color: var(--rose);
+  opacity: 0.7;
+  flex-shrink: 0;
+  min-width: 18px;
+  text-align: center;
+}
+.ent-name-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  color: var(--text);
+  font-weight: 400;
+  line-height: 1.3;
+  font-style: italic;
+}
+
+.entourage-group-divider {
+  width: 40px;
+  height: 1px;
+  background: rgba(244,143,177,0.3);
+  margin: 40px auto 0;
+}
+
+/* ── Mobile responsive ── */
+@media(max-width:768px) {
+  .entourage-section.section-card { padding: 40px 16px; }
+  .entourage-leads { flex-direction: column; max-width: 100%; border-radius: 20px; }
+  .entourage-lead-card:first-child { border-right: none; border-bottom: 1px solid rgba(244,143,177,0.25); }
+  .entourage-lead-card { padding: 24px 16px; }
+  .lead-name { font-size: 20px; }
+  .entourage-names-grid { grid-template-columns: repeat(2, 1fr); gap: 8px 10px; }
+  .entourage-names-grid.wide { grid-template-columns: repeat(2, 1fr); }
+  .entourage-names-grid.two-col { grid-template-columns: 1fr 1fr; }
+  .ent-name-text { font-size: 14px; }
+  .entourage-group-title { font-size: 22px; }
+}
+@media(max-width:480px) {
+  .entourage-names-grid,
+  .entourage-names-grid.wide,
+  .entourage-names-grid.two-col { grid-template-columns: 1fr; max-width: 100%; }
+}
+
 /* Responsive */
 @media(max-width:768px){
   /* 1. Navbar & Menu */
@@ -1666,6 +2023,8 @@ nav{
   .cloud-details-card { padding: 30px 20px; width: 100%; gap: 16px; }
   .elegant-value { font-size: 18px; }
 
+  .hero-name { font-size: clamp(75px, 18vw, 100px); }
+
   /* 4. Section Cards General Spacing */
   .cards-wrapper { padding: 0 16px; }
   .section-card {
@@ -1682,6 +2041,9 @@ nav{
   #rsvp.section-card {
     padding: 32px 16px; /* Uniform, breathable mobile padding */
   }
+  .inline-bp-section.section-card {
+    padding: 28px 14px; /* Slightly tighter so ticket stays inside dashed border */
+  }
 
   /* Countdown tweaks */
   .cd-grid { gap: 8px; flex-wrap: nowrap; }
@@ -1690,25 +2052,72 @@ nav{
   .cd-lbl { font-size: 6px; letter-spacing: 1.5px; }
 
   /* Boarding Pass tweaks */
-  .ibp-ticket { grid-template-columns: 1fr; border-radius: 16px; }
-  .ibp-header { padding: 16px; }
-  .ibp-route { padding: 16px 16px 12px; }
-  .ibp-fields { grid-template-columns: repeat(2, 1fr); padding: 12px 16px 16px; }
+  .inline-bp { width: 100%; }
+  .ibp-ticket {
+    grid-template-columns: 1fr;
+    border-radius: 16px;
+    overflow: hidden;
+    width: 100%;
+    min-width: 0;
+  }
+  .ibp-left { min-width: 0; overflow: hidden; }
+  .ibp-header { padding: 14px 16px; }
+  .ibp-header-top { flex-wrap: wrap; gap: 6px; }
+  .ibp-airline-name { font-size: 9px; letter-spacing: 4px; }
+  .ibp-flight-badge { font-size: 8px; padding: 3px 10px; }
+  .ibp-route {
+    padding: 14px 16px 12px;
+    gap: 8px;
+  }
+  .ibp-iata { font-size: clamp(22px, 7vw, 32px); letter-spacing: 2px; }
+  .ibp-route-dash { width: 20px; }
+  .ibp-fields {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 12px 16px 16px;
+    gap: 12px 8px;
+  }
+  .ibp-val { font-size: clamp(11px, 3.5vw, 14px); }
+  .ibp-val.name-val { font-size: clamp(14px, 4.5vw, 19px); }
   .ibp-tear {
     background: repeating-linear-gradient(to right, rgba(244,143,177,0.3) 0px, rgba(244,143,177,0.3) 5px, transparent 5px, transparent 11px);
-    height: 14px; width: 100%;
+    height: 14px;
+    width: 100%;
   }
   .ibp-tear::before { top: 50%; transform: translate(-50%, -50%); left: -7px; }
   .ibp-tear::after  { top: 50%; transform: translate(50%, -50%); left: auto; right: -7px; }
-  .ibp-right { flex-direction: row; flex-wrap: wrap; justify-content: center; padding: 20px 16px; gap: 12px; border-radius: 0 0 16px 16px; }
-  .ibp-right::before { display: none; }
-  .ibp-monogram { width: 56px; height: 56px; flex-shrink: 0; }
-  .ibp-mono-initials { font-size: 20px; }
+  .ibp-right {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 16px;
+    gap: 12px;
+    border-radius: 0 0 16px 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .ibp-right::before {
+    display: block;
+    width: 160px;
+    height: 160px;
+    box-shadow:
+      0 0 0 22px rgba(240,98,146,0.07),
+      0 0 0 44px rgba(240,98,146,0.05),
+      0 0 0 66px rgba(240,98,146,0.03);
+  }
+  .ibp-monogram { width: 52px; height: 52px; flex-shrink: 0; }
+  .ibp-mono-initials { font-size: 18px; }
+  .ibp-stub-name { font-size: 15px; }
+  .ibp-gate { min-width: 60px; padding: 6px 12px; }
+  .ibp-gate-val { font-size: 12px; }
+  .ibp-tags { gap: 4px; }
+  .ibp-tag { font-size: 6px; padding: 3px 8px; }
+  .ibp-stub-barcode { height: 28px; }
 
   /* Collage tweaks */
-  .collage-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 140px 140px 140px; gap: 6px; }
+  .collage-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 140px 140px 140px 140px; gap: 6px; }
   .collage-cell.tall { grid-row: span 1; }
-  .collage-cell.wide { grid-column: span 1; }
+  .collage-cell.wide { grid-column: span 2; }
   .collage-cell:nth-child(4) { display: none; }
 
   /* Photo Strip tweaks */
@@ -1729,7 +2138,7 @@ nav{
   .swatch-circle { width: 54px; height: 54px; }
 
   /* Footer & RSVP Bar tweaks */
-  .footer-section { padding: 50px 16px 90px; } /* Added bottom padding so the fixed RSVP bar doesn't cover text */
+  .footer-section { padding: 60px 20px 100px !important; } /* Added bottom padding so the fixed RSVP bar doesn't cover text */
   .rsvp-bar { flex-direction: column; gap: 8px; padding: 12px 16px; }
 }
 </style>
@@ -1832,6 +2241,7 @@ nav{
   <a href="#hero" class="nav-brand">Amanda Pritzie</a>
   <ul class="nav-links">
     <li><a href="#collage">Gallery</a></li>
+    <li><a href="#entourage">Entourage</a></li>
     <li><a href="#schedule">Programme</a></li>
     <li><a href="#activities">Program</a></li>
     <li><a href="#dresscode">Dress Code</a></li>
@@ -1842,6 +2252,7 @@ nav{
 </nav>
 <div class="mob-menu" id="mobMenu">
   <a href="#collage" onclick="toggleMob()">Gallery</a>
+  <a href="#entourage" onclick="toggleMob()">Entourage</a>
   <a href="#schedule" onclick="toggleMob()">Programme</a>
   <a href="#activities" onclick="toggleMob()">Program</a>
   <a href="#dresscode" onclick="toggleMob()">Dress Code</a>
@@ -1853,7 +2264,6 @@ nav{
 <section id="hero">
   <div class="hero-plane">✈</div>
   <div class="hero-plane-2">✈</div>
-  <p class="hero-eyebrow">✈ &nbsp; You Are Cordially Invited &nbsp; ✈</p>
   <h1 class="hero-name">Amanda Pritzie</h1>
   <div class="hero-rule"><div class="hero-rule-icon">✈</div></div>
   <div class="cloud-details-card">
@@ -1869,10 +2279,6 @@ nav{
       <div class="elegant-label">VENUE</div>
       <div class="elegant-value">Winford Resort and Casino Ballroom<br>Metro Manila</div>
     </div>
-  </div>
-  <div class="scroll-cue">
-    <p>Scroll</p>
-    <div class="scroll-line"></div>
   </div>
 </section>
 
@@ -1903,44 +2309,35 @@ nav{
             <span class="ibp-flight-badge">Flight L&C-018</span>
           </div>
         </div>
-        <div class="ibp-route">
-          <div class="ibp-iata-grp">
-            <div class="ibp-iata">YOUTH</div>
-            <div class="ibp-city-name">Before Eighteen</div>
-          </div>
-          <div class="ibp-arrow-col">
-            <div class="ibp-plane-icon">✈</div>
-            <div class="ibp-route-line">
-              <div class="ibp-route-dot"></div>
-              <div class="ibp-route-dash"></div>
-              <div class="ibp-route-dot"></div>
+       <div class="ibp-route" style="text-align: center; padding-bottom: 15px; border-bottom: 2px dashed var(--pink-mid); margin-bottom: 20px;">
+          <div class="ibp-iata-grp" style="display: flex; justify-content: center; align-items: center; gap: 8px;">
+            <span style="color: var(--rose-soft); font-size: 1.2rem;">✦</span>
+            <div class="ibp-iata" style="font-family: 'Quicksand', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--pink-deep); letter-spacing: 2px; text-transform: uppercase;">
+              You are cordially invited to the debut celebration of
             </div>
-          </div>
-          <div class="ibp-iata-grp right">
-            <div class="ibp-iata">WOMAN</div>
-            <div class="ibp-city-name">Officially Eighteen</div>
+            <span style="color: var(--rose-soft); font-size: 1.2rem;">✦</span>
           </div>
         </div>
-        <div class="ibp-fields">
-          <div class="ibp-field" style="grid-column:span 2;">
-            <span class="ibp-lbl">Passenger</span>
-            <span class="ibp-val name-val">Amanda Pritzie Cabauatan</span>
+
+        <div class="ibp-fields" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; align-items: stretch;">
+          <div class="ibp-field" style="grid-column: span 3; text-align: center; background: var(--pink-pale); padding: 20px 15px; border-radius: 12px; border: 1px solid var(--pink-light); box-shadow: 0 4px 15px rgba(244, 143, 177, 0.15);">
+            <span class="ibp-lbl" style="display: block; font-family: 'Quicksand', sans-serif; font-size: 0.85rem; color: var(--rose); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 5px; font-weight: 600;">Passenger</span>
+            <span class="ibp-val name-val" style="display: block; font-family: 'Dancing Script', cursive; font-size: 2.8rem; color: var(--pink-deep); line-height: 1.1; text-shadow: 1px 1px 2px rgba(255,255,255,0.8);">Amanda Pritzie Cabauatan</span>
           </div>
-          <div class="ibp-field">
-            <span class="ibp-lbl">Class</span>
-            <span class="ibp-val">First Class ✨</span>
+          
+          <div class="ibp-field" style="text-align: center; padding: 12px 5px; background: rgba(255, 255, 255, 0.6); border-radius: 8px;">
+            <span class="ibp-lbl" style="display: block; color: var(--rose); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; font-weight: 600;">Date</span>
+            <span class="ibp-val" style="display: block; color: #444; font-weight: 600; font-family: 'Quicksand', sans-serif; font-size: 0.95rem;">May 16, 2026</span>
           </div>
-          <div class="ibp-field">
-            <span class="ibp-lbl">Date</span>
-            <span class="ibp-val">May 16, 2026</span>
+          
+          <div class="ibp-field" style="text-align: center; padding: 12px 5px; background: rgba(255, 255, 255, 0.6); border-radius: 8px; border-left: 1px dashed var(--pink-light); border-right: 1px dashed var(--pink-light);">
+            <span class="ibp-lbl" style="display: block; color: var(--rose); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; font-weight: 600;">Departure</span>
+            <span class="ibp-val" style="display: block; color: #444; font-weight: 600; font-family: 'Quicksand', sans-serif; font-size: 0.95rem;">6:00 PM</span>
           </div>
-          <div class="ibp-field">
-            <span class="ibp-lbl">Departure</span>
-            <span class="ibp-val">6:00 PM</span>
-          </div>
-          <div class="ibp-field">
-            <span class="ibp-lbl">Venue</span>
-            <span class="ibp-val">Winford Resort & Casino Ballroom</span>
+          
+          <div class="ibp-field" style="text-align: center; padding: 12px 5px; background: rgba(255, 255, 255, 0.6); border-radius: 8px;">
+            <span class="ibp-lbl" style="display: block; color: var(--rose); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; font-weight: 600;">Venue</span>
+            <span class="ibp-val" style="display: block; color: #444; font-weight: 600; font-family: 'Quicksand', sans-serif; font-size: 0.85rem; line-height: 1.2;">Winford Resort & Casino</span>
           </div>
         </div>
       </div>
@@ -1950,15 +2347,14 @@ nav{
           <div class="ibp-mono-initials">APC</div>
           <div class="ibp-mono-flower">✿ ✿ ✿</div>
         </div>
-        <div class="ibp-stub-lbl">Boarding Pass</div>
-        <div class="ibp-stub-name">Amanda<br>Pritzie</div>
+        <div class="ibp-stub-lbl">RSVP by May 1</div>
+        <div class="ibp-stub-name">Messenger:<br>Amanda Cab<br>No. 09212411888</div>
         <div class="ibp-gate">
           <span class="ibp-gate-lbl">Gate</span>
           <span class="ibp-gate-val">PINK 💕</span>
         </div>
         <div class="ibp-tags">
           <div class="ibp-tag">Seat 18A</div>
-          <div class="ibp-tag">1st Class</div>
         </div>
         <div class="ibp-stub-barcode" id="inline-barcode"></div>
       </div>
@@ -2005,194 +2401,147 @@ nav{
   </div>
 </section>
 
-<!-- SCHEDULE -->
-<div class="schedule-section section-card reveal" id="schedule">
-  <div style="max-width:900px;margin:0 auto;position:relative;z-index:1;padding:0 30px 10px;">
-    <p class="section-label">Evening Programme</p>
-    <h2 class="section-title">Programme of Events</h2>
-    <div class="divider"><div class="divider-heart">✈</div></div>
-  </div>
 
-  <div class="schedule-scroll-outer">
-    <div class="schedule-scroll-track">
-      <div class="timeline-scrollable" id="scheduleTrack">
-        <!-- Card 1 -->
-        <div class="timeline-card">
-          <div class="card-photo-single">
-            <div class="card-photo-placeholder">🌸</div>
-            <div class="card-photo-label">Event Photo</div>
-          </div>
-          <div class="timeline-card-time">6:00 – 7:00 PM</div><h4>Cocktail Hour</h4><p>Grazing table &amp; welcome reception for guests</p>
-        </div>
-        <!-- Card 2 -->
-        <div class="timeline-card">
-          <div class="card-photo-single">
-            <div class="card-photo-placeholder">✈</div>
-            <div class="card-photo-label">Event Photo</div>
-          </div>
-          <div class="timeline-card-time">7:00 PM</div><h4>Grand Entrance</h4><p>Amanda makes her grand debut entrance into the ballroom</p>
-        </div>
-        <!-- Card 3 -->
-        <div class="timeline-card">
-          <div class="card-photo-single">
-            <div class="card-photo-placeholder">🌹</div>
-            <div class="card-photo-label">Event Photo</div>
-          </div>
-          <div class="timeline-card-time">7:00 PM</div><h4>18 Roses Ceremony</h4><p>Eighteen gentlemen present a rose to the debutante</p>
-        </div>
-        <!-- Card 4 -->
-        <div class="timeline-card">
-          <div class="card-photo-single">
-            <div class="card-photo-placeholder">📸</div>
-            <div class="card-photo-label">Event Photo</div>
-          </div>
-          <div class="timeline-card-time">After 18 Roses</div><h4>Picture Taking</h4><p>Photo opportunities with the debutante and her family</p>
-        </div>
-        <!-- Card 5 -->
-        <div class="timeline-card">
-          <div class="card-photo-single">
-            <div class="card-photo-placeholder">🍽️</div>
-            <div class="card-photo-label">Event Photo</div>
-          </div>
-          <div class="timeline-card-time">7:30 PM</div><h4>Dinner</h4><p>A celebratory feast shared with loved ones</p>
-        </div>
-        <!-- Card 6 -->
-        <div class="timeline-card">
-          <div class="card-photo-single">
-            <div class="card-photo-placeholder">🕯️</div>
-            <div class="card-photo-label">Event Photo</div>
-          </div>
-          <div class="timeline-card-time">8:30 PM</div><h4>18 Candles Ceremony</h4><p>Ladies light a candle and share their heartfelt wishes</p>
-        </div>
-        <!-- Card 7 -->
-        <div class="timeline-card">
-          <div class="card-photo-single">
-            <div class="card-photo-placeholder">🎂</div>
-            <div class="card-photo-label">Event Photo</div>
-          </div>
-          <div class="timeline-card-time">After 18 Candles</div><h4>Blowing Out the Candles</h4><p>Amanda makes her birthday wish over a beautiful cake</p>
-        </div>
-        <!-- Card 8 -->
-        <div class="timeline-card">
-          <div class="card-photo-single">
-            <div class="card-photo-placeholder">🥂</div>
-            <div class="card-photo-label">Event Photo</div>
-          </div>
-          <div class="timeline-card-time">9:45 PM</div><h4>Toasts</h4><p>Heartfelt messages and toasts from those who love her most</p>
-        </div>
-        <!-- Card 9 -->
-        <div class="timeline-card">
-          <div class="card-photo-single">
-            <div class="card-photo-placeholder">💬</div>
-            <div class="card-photo-label">Event Photo</div>
-          </div>
-          <div class="timeline-card-time">10:25 PM</div><h4>Debutante's Speech</h4><p>Amanda shares her message of gratitude and love</p>
-        </div>
-        <!-- Card 10 -->
-        <div class="timeline-card">
-          <div class="card-photo-single">
-            <div class="card-photo-placeholder">🎁</div>
-            <div class="card-photo-label">Event Photo</div>
-          </div>
-          <div class="timeline-card-time">10:30 PM</div><h4>Distribution of Souvenirs</h4><p>Take home a keepsake from this magical evening</p>
-        </div>
-      </div>
-    </div>
-    <!-- Navigation Buttons -->
-    <div class="schedule-nav">
-      <button class="sched-btn" id="schedPrev" onclick="schedScroll(-1)">&#8592;</button>
-      <div class="sched-dots" id="schedDots"></div>
-      <button class="sched-btn" id="schedNext" onclick="schedScroll(1)">&#8594;</button>
-    </div>
-  </div>
-</div>
 
-<!-- DRESS CODE -->
-<div class="dresscode-section section-card reveal" id="dresscode">
-  <p class="section-label">Dress Code</p>
-  <h2 class="section-title">What to Wear</h2>
-  <div class="divider"><div class="divider-heart">✈</div></div>
-  <p style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--text);font-style:italic;font-weight:300;margin-bottom:32px;">Semi-Formal or Formal Attire</p>
 
-  <div class="dress-columns">
-    <div class="dress-col">
-      <div class="dress-col-icon">👔</div>
-      <div class="dress-col-title">Gentlemen</div>
-      <ul class="dress-list">
-        <li>Suit or Blazer</li>
-        <li>Long Sleeve Polo</li>
-        <li>Trousers or Slacks</li>
-      </ul>
-    </div>
-    <div class="dress-divider-v"></div>
-    <div class="dress-col">
-      <div class="dress-col-icon">👗</div>
-      <div class="dress-col-title">Ladies</div>
-      <div class="dress-sub-title">Semi-Formal</div>
-      <ul class="dress-list">
-        <li>Cocktail Dress</li>
-        <li>Classy Blouse &amp; Trousers</li>
-      </ul>
-      <div class="dress-sub-title" style="margin-top:14px;">Formal</div>
-      <ul class="dress-list">
-        <li>Long Dress</li>
-        <li>Evening Gown</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="dress-avoid">
-    <span class="dress-avoid-icon">🚫</span>
-    <span>Please avoid wearing <strong>pink</strong> and <strong>black</strong></span>
-  </div>
-</div>
-
-<!-- RSVP -->
-<section id="rsvp" class="section-card reveal">
-  <p class="section-label">Join the Journey</p>
-  <h2 class="section-title">RSVP</h2>
+<!-- ENTOURAGE -->
+<div class="entourage-section section-card reveal" id="entourage">
+  <p class="section-label">The Stars of the Evening</p>
+  <h2 class="section-title">Entourage</h2>
   <div class="divider"><div class="divider-heart">✈</div></div>
 
-  <div class="rsvp-elegant-wrap">
-    <div class="rsvp-deadline-badge">
-      <span class="rsvp-deadline-icon">🗓️</span>
-      <div>
-        <div class="rsvp-deadline-label">Kindly reply by</div>
-        <div class="rsvp-deadline-date">May 1, 2026</div>
-      </div>
+  <!-- Debutante & Escort -->
+  <div class="entourage-leads">
+    <div class="entourage-lead-card">
+      <div class="lead-icon">👑</div>
+      <div class="lead-role-badge">Debutante</div>
+      <div class="lead-name">Ms. Amanda Pritzie Cabauatan</div>
     </div>
-
-    <p class="rsvp-note-elegant">We would be honored to share this milestone with you.<br>Please reach out to confirm your seat at the table.</p>
-
-    <div class="rsvp-contacts-elegant">
-      <div class="rsvp-elegant-card">
-        <div class="rsvp-elegant-icon-wrap">
-          <span class="rsvp-elegant-icon">💬</span>
-        </div>
-        <div class="rsvp-elegant-info">
-          <div class="rsvp-elegant-method">Messenger</div>
-          <div class="rsvp-elegant-name">Amanda Pritzie</div>
-        </div>
-        <div class="rsvp-elegant-arrow">→</div>
-      </div>
-
-      <div class="rsvp-elegant-divider"><span>or</span></div>
-
-      <div class="rsvp-elegant-card">
-        <div class="rsvp-elegant-icon-wrap">
-          <span class="rsvp-elegant-icon">📱</span>
-        </div>
-        <div class="rsvp-elegant-info">
-          <div class="rsvp-elegant-method">Mobile</div>
-          <div class="rsvp-elegant-name">09292411188</div>
-        </div>
-        <div class="rsvp-elegant-arrow">→</div>
-      </div>
+    <div class="entourage-lead-card">
+      <div class="lead-icon">🎩</div>
+      <div class="lead-role-badge">Escort</div>
+      <div class="lead-name">Mr. Markus Jonathan Mois</div>
     </div>
-
-    <div class="rsvp-footer-note">✈ &nbsp; We look forward to celebrating with you &nbsp; ✈</div>
   </div>
-</section>
+
+  <div class="entourage-groups">
+
+    <!-- 18 Roses -->
+    <div class="entourage-group">
+      <div class="entourage-group-header">
+        <span class="entourage-group-icon">🌹</span>
+        <div>
+          <div class="entourage-group-title">18 Roses</div>
+          <div class="entourage-group-num">Eighteen Gentlemen</div>
+        </div>
+        <span class="entourage-group-icon">🌹</span>
+      </div>
+      <div class="entourage-names-grid">
+        <div class="ent-name-item"><span class="ent-name-num">01</span><span class="ent-name-text">Amador Cabauatan</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">02</span><span class="ent-name-text">Allan Cabauatan</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">03</span><span class="ent-name-text">Nealon Batalla</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">04</span><span class="ent-name-text">Axl Franz Cabauatan</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">05</span><span class="ent-name-text">Prince Allan Cabauatan</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">06</span><span class="ent-name-text">Emil John Reyes</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">07</span><span class="ent-name-text">Roberto Lumauan</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">08</span><span class="ent-name-text">Ernesto Malabad</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">09</span><span class="ent-name-text">Melchor Sandrino</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">10</span><span class="ent-name-text">Jerry Canaya</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">11</span><span class="ent-name-text">Jeff Valencia</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">12</span><span class="ent-name-text">Alvin Pastrana</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">13</span><span class="ent-name-text">Dennis Gumapac</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">14</span><span class="ent-name-text">Dexter Manigbas</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">15</span><span class="ent-name-text">Romeo Alcasabas</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">16</span><span class="ent-name-text">Edward John Licarte</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">17</span><span class="ent-name-text">Dashryl Pasardoza</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">18</span><span class="ent-name-text">Markus Jonathan Mois</span></div>
+      </div>
+    </div>
+
+    <div class="entourage-group-divider"></div>
+
+    <!-- 18 Candles -->
+    <div class="entourage-group">
+      <div class="entourage-group-header">
+        <span class="entourage-group-icon">🕯️</span>
+        <div>
+          <div class="entourage-group-title">18 Candles</div>
+          <div class="entourage-group-num">Twenty Ladies</div>
+        </div>
+        <span class="entourage-group-icon">🕯️</span>
+      </div>
+      <div class="entourage-names-grid two-col">
+        <div class="ent-name-item"><span class="ent-name-num">01</span><span class="ent-name-text">Mrs. Purita Cabauatan</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">02</span><span class="ent-name-text">Mrs. Precy Batalla</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">03</span><span class="ent-name-text">Mrs. Sunshine Cabauatan</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">04</span><span class="ent-name-text">Mrs. Annie Reyes</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">05</span><span class="ent-name-text">Ms. Mary Rose Ann Reyes</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">06</span><span class="ent-name-text">Mrs. Florie Pastrana</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">07</span><span class="ent-name-text">Mrs. Rosemarie De Austria</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">08</span><span class="ent-name-text">Mrs. Tess Lumauan</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">09</span><span class="ent-name-text">Mrs. Arceli Malabad</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">10</span><span class="ent-name-text">Mrs. Lucita Canaya</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">11</span><span class="ent-name-text">Mrs. Desiree Valencia</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">12</span><span class="ent-name-text">Mrs. Dulce Manigbas</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">13</span><span class="ent-name-text">Mrs. Joy Alcasabas</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">14</span><span class="ent-name-text">Mrs. Mylene Dolonius</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">15</span><span class="ent-name-text">Mrs. Elizabeth Besa</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">16</span><span class="ent-name-text">Mrs. Vangie Santos</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">17</span><span class="ent-name-text">Mrs. Belle Mendoza</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">18</span><span class="ent-name-text">Mrs. Fhei Pastrana</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">19</span><span class="ent-name-text">Ms. Riva Donia Tadi</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">20</span><span class="ent-name-text">Ms. Alexandra Villanueva</span></div>
+      </div>
+    </div>
+
+    <div class="entourage-group-divider"></div>
+
+    <!-- Toasts -->
+    <div class="entourage-group">
+      <div class="entourage-group-header">
+        <span class="entourage-group-icon">🥂</span>
+        <div>
+          <div class="entourage-group-title">Toasts</div>
+          <div class="entourage-group-num">Thirty Friends</div>
+        </div>
+        <span class="entourage-group-icon">🥂</span>
+      </div>
+      <div class="entourage-names-grid wide">
+        <div class="ent-name-item"><span class="ent-name-num">01</span><span class="ent-name-text">Nicole Espina</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">02</span><span class="ent-name-text">Sophia Uy</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">03</span><span class="ent-name-text">Yesha Cometa</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">04</span><span class="ent-name-text">Ryshell Ret</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">05</span><span class="ent-name-text">Kristina Echon</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">06</span><span class="ent-name-text">Trisha Lirazan</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">07</span><span class="ent-name-text">Beatrice Bermudez</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">08</span><span class="ent-name-text">Anne Pauline Corado</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">09</span><span class="ent-name-text">Alexandra Villanueva</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">10</span><span class="ent-name-text">Sofia Mae Reyes</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">11</span><span class="ent-name-text">Nadine Batalla</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">12</span><span class="ent-name-text">Alyssa Omega</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">13</span><span class="ent-name-text">Clarisa Solver</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">14</span><span class="ent-name-text">Stephanie Dabalos</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">15</span><span class="ent-name-text">Jaliyah Villones</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">16</span><span class="ent-name-text">Angeline Morada</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">17</span><span class="ent-name-text">Zen Dalhag</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">18</span><span class="ent-name-text">Samantha Cirio</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">19</span><span class="ent-name-text">Shayne Heart Tongol</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">20</span><span class="ent-name-text">Karylle Devela</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">21</span><span class="ent-name-text">Trisha Pacleta</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">22</span><span class="ent-name-text">Aleza Chico</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">23</span><span class="ent-name-text">Kyle Velasco</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">24</span><span class="ent-name-text">Irish Collado</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">25</span><span class="ent-name-text">Erica Morales</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">26</span><span class="ent-name-text">Dennis James Chua</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">27</span><span class="ent-name-text">Lourdes Bata</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">28</span><span class="ent-name-text">Andy Buela</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">29</span><span class="ent-name-text">Loreign Vergara</span></div>
+        <div class="ent-name-item"><span class="ent-name-num">30</span><span class="ent-name-text">Gem Yoingco</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <!-- PROGRAM -->
 <div class="program-section section-card reveal" id="activities">
@@ -2290,6 +2639,144 @@ nav{
   </div>
 </div>
 
+<div class="schedule-section section-card reveal" id="schedule">
+  <div style="max-width:900px;margin:0 auto;position:relative;z-index:1;padding:0 30px 10px;">
+    <p class="section-label">Evening Programme</p>
+    <h2 class="section-title">Activity List</h2>
+    <div class="divider"><div class="divider-heart">✈</div></div>
+  </div>
+
+  <div class="schedule-scroll-outer">
+    <div class="schedule-scroll-track">
+      <div class="timeline-scrollable" id="scheduleTrack">
+        
+        <div class="timeline-card">
+          <div class="card-photo-single">
+            <img src="leather.jpg" alt="Cocktail Hour" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+            <div class="card-photo-label">Event Photo</div>
+          </div>
+          <h4>Leather Stamping</h4>
+          <p>Receive a personalized leather keepsake upon arrival</p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="card-photo-single">
+            <img src="studio.jpg" alt="Grand Entrance" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+            <div class="card-photo-label">Event Photo</div>
+          </div>
+          <h4>Onsite Studio</h4>
+          <p>Step into the studio for a glamorous portrait session</p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="card-photo-single">
+            <img src="mirror.jpg" alt="18 Roses and Photos" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+            <div class="card-photo-label">Event Photo</div>
+          </div>
+          <h4>Mirror Selfie</h4>
+          <p>A fun group photo with friends</p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="card-photo-single">
+            <img src="bar.jpg" alt="Dinner" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+            <div class="card-photo-label">Event Photo</div>
+          </div>
+          <h4>Perfume Bar</h4>
+          <p>Create a custom scent as a memento of the night</p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="card-photo-single">
+            <img src="audio.jpg" alt="18 Candles Ceremony" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+            <div class="card-photo-label">Event Photo</div>
+          </div>
+          <h4>Audio Greeting</h4>
+          <p>Record a voice message for Amanda to listen to on her birthday</p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="card-photo-single">
+            <img src="postcard.jpg" alt="Birthday Cake" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+            <div class="card-photo-label">Event Photo</div>
+          </div>
+          <h4>Postcard Message</h4>
+          <p>Write a note to Amanda for her to read on her next milestone birthday</p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="card-photo-single">
+            <img src="photobooth.jpg" alt="Toasts and Speech" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+            <div class="card-photo-label">Event Photo</div>
+          </div>
+          <h4>Photobooth</h4>
+          <p>Capture memories with fun props and backdrops</p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="card-photo-single">
+            <img src="video.jpg" alt="Souvenirs" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+            <div class="card-photo-label">Event Photo</div>
+          </div>
+          <h4>Video Message</h4>
+          <p>Record a video message for Amanda to watch on her next milestone birthday</p>
+        </div>
+
+      </div>
+    </div>
+    
+    <div class="schedule-nav">
+      <button class="sched-btn" id="schedPrev" onclick="schedScroll(-1)">&#8592;</button>
+      <div class="sched-dots" id="schedDots"></div>
+      <button class="sched-btn" id="schedNext" onclick="schedScroll(1)">&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<!-- DRESS CODE -->
+<div class="dresscode-section section-card reveal" id="dresscode">
+  <p class="section-label">Dress Code</p>
+  <h2 class="section-title">What to Wear</h2>
+  <div class="divider"><div class="divider-heart">✈</div></div>
+  <p style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--text);font-style:italic;font-weight:300;margin-bottom:32px;">Semi-Formal or Formal Attire</p>
+
+  <div class="dress-columns">
+    <div class="dress-col">
+      <div class="dress-col-icon">👔</div>
+      <div class="dress-col-title">Gentlemen</div>
+      <ul class="dress-list">
+        <li>Suit or Blazer</li>
+        <li>Long Sleeve Polo</li>
+        <li>Trousers or Slacks</li>
+      </ul>
+    </div>
+    <div class="dress-divider-v"></div>
+    <div class="dress-col">
+      <div class="dress-col-icon">👗</div>
+      <div class="dress-col-title">Ladies</div>
+      <div class="dress-sub-title">Semi-Formal</div>
+      <ul class="dress-list">
+        <li>Cocktail Dress</li>
+        <li>Classy Blouse &amp; Trousers</li>
+      </ul>
+      <div class="dress-sub-title" style="margin-top:14px;">Formal</div>
+      <ul class="dress-list">
+        <li>Long Dress</li>
+        <li>Evening Gown</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dress-avoid">
+    <span class="dress-avoid-icon">🚫</span>
+    <span>Please avoid wearing <strong>pink</strong> and <strong>black</strong></span>
+  </div>
+</div>
+
+
+
+
+
 <!-- REMINDERS -->
 <div class="reminders-section section-card reveal" id="reminders">
   <p class="section-label">Before You Come</p>
@@ -2314,19 +2801,69 @@ nav{
   </div>
 </div>
 
+<!-- RSVP -->
+<section id="rsvp" class="section-card reveal">
+  <p class="section-label">Join the Journey</p>
+  <h2 class="section-title">RSVP</h2>
+  <div class="divider"><div class="divider-heart">✈</div></div>
+
+  <div class="rsvp-elegant-wrap">
+    <div class="rsvp-deadline-badge">
+      <span class="rsvp-deadline-icon">🗓️</span>
+      <div>
+        <div class="rsvp-deadline-label">Kindly reply by</div>
+        <div class="rsvp-deadline-date">May 1, 2026</div>
+      </div>
+    </div>
+
+    <p class="rsvp-note-elegant">We would be honored to share this milestone with you.<br>Please reach out to confirm your seat at the table.</p>
+
+    <div class="rsvp-contacts-elegant">
+      <div class="rsvp-elegant-card">
+        <div class="rsvp-elegant-icon-wrap">
+          <span class="rsvp-elegant-icon">💬</span>
+        </div>
+        <div class="rsvp-elegant-info">
+          <div class="rsvp-elegant-method">Messenger</div>
+          <div class="rsvp-elegant-name">Amanda Pritzie</div>
+        </div>
+        <div class="rsvp-elegant-arrow">→</div>
+      </div>
+
+      <div class="rsvp-elegant-divider"><span>or</span></div>
+
+      <div class="rsvp-elegant-card">
+        <div class="rsvp-elegant-icon-wrap">
+          <span class="rsvp-elegant-icon">📱</span>
+        </div>
+        <div class="rsvp-elegant-info">
+          <div class="rsvp-elegant-method">Mobile</div>
+          <div class="rsvp-elegant-name">09292411188</div>
+        </div>
+        <div class="rsvp-elegant-arrow">→</div>
+      </div>
+    </div>
+
+    <div class="rsvp-footer-note">✈ &nbsp; We look forward to celebrating with you &nbsp; ✈</div>
+  </div>
+</section>
+
 </div><!-- end .cards-wrapper -->
 
 <!-- FOOTER -->
 <div class="footer-section reveal">
-  <div class="footer-rule"></div>
-  <p class="footer-quote">"Tonight, we celebrate not just eighteen years, but a lifetime of beauty yet to unfold."</p>
-  <div style="margin:32px 0 16px;">
-    <div class="footer-plane">✈</div>
+  <div class="footer-inner">
+    <div class="footer-tagline">✈ &nbsp; A Debut Celebration &nbsp; ✈</div>
+    <div class="footer-divider"><span class="footer-divider-icon">✦</span></div>
+    <p class="footer-name">Amanda Pritzie Cabauatan</p>
+    <p class="footer-date">Saturday, May 16, 2026<br>Winford Resort and Casino Ballroom, Metro Manila</p>
+    <div class="footer-tags">
+      <span class="footer-tag">♡ &nbsp; 18th Birthday</span>
+      <span class="footer-tag">✈ &nbsp; First Class</span>
+      <span class="footer-tag">♡ &nbsp; #AmandaPritzAt18</span>
+    </div>
+    <p class="footer-copy">With Love — From Your Family</p>
   </div>
-  <p class="footer-name">Amanda Pritzie Cabauatan</p>
-  <p class="footer-date">Saturday, May 16, 2026 · Winford Resort and Casino Ballroom, Metro Manila</p>
-  <div style="width:40px;height:1px;background:rgba(255,255,255,0.12);margin:28px auto 20px;"></div>
-  <p class="footer-copy">With Love — From Your Family · #AmandaPritzAt18</p>
 </div>
 
 <!-- RSVP BAR -->
