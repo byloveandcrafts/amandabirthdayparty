@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amanda Pritzie Cabauatan — Birthday ✈ May 16, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Quicksand:wght@300;400;500;600&family=Dancing+Script:wght@400;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink:        #F48FB1;
+  --pink-deep:   #E91E8C;
+  --pink-light:  #FCE4EC;
+  --pink-pale:   #FFF0F5;
+  --pink-mid:    #F8BBD9;
+  --rose:        #F06292;
+  --rose-soft:   #EF9DBE;
+  --blush:       #FFCDD2;
+  --cream:       #FFF9FB;
+  --white:       #FFFCFE;
+  --gold:        #F4B8C8;
+  --gold-acc:    #E879A0;
+  --text:        #4A1942;
+  --text-mid:    #8B4A6E;
+  --text-soft:   #C490A8;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+/* 🌸 UNIFIED PINK GRADIENT BACKGROUND — light to deep */
+body {
+  font-family:'Quicksand',sans-serif;
+  background: linear-gradient(180deg, #FFF0F5 0%, #FCE4EC 25%, #F8BBD9 55%, #F06292 85%, #C2185B 100%);
+  color:var(--text);
+  overflow-x:hidden;
+  cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ctext y='20' font-size='18'%3E✈%3C/text%3E%3C/svg%3E") 12 12, auto;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ☁️ GLOBAL CLOUDS — across whole site except footer */
+#global-clouds {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* 🌙 NIGHT SKY OVERLAY (stars + moon) — fades in at schedule */
+#night-sky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow: hidden;
+}
+
+/* Moon (crescent) */
+.moon {
+  position: absolute;
+  top: 15%;
+  right: 8%;
+  width: 80px;
+  height: 80px;
+  background: transparent;
+  box-shadow: 15px 10px 0 0 #FFF9E6;
+  border-radius: 50%;
+  transform: rotate(-10deg);
+  filter: drop-shadow(0 0 15px rgba(255, 240, 200, 0.7));
+  opacity: 0.9;
+  z-index: 2;
+}
+
+/* Stars container */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+/* Individual star style (using pseudo-elements and box shadows) */
+.star {
+  position: absolute;
+  background: #FFF;
+  border-radius: 50%;
+  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.8);
+  width: 2px;
+  height: 2px;
+  opacity: 0.7;
+  animation: twinkleStar 3s infinite alternate;
+}
+
+@keyframes twinkleStar {
+  0% { opacity: 0.2; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.3); }
+}
+
+/* All sections become transparent to show gradient, except footer */
+section, .inline-bp-section, .collage-section, .photo-strip-section, .eighteens-section, .schedule-section, .dresscode-section, #rsvp, #countdown, #hero {
+  background: transparent !important;
+  position: relative;
+  z-index: 5; /* above clouds */
+}
+
+/* Keep some contrast for readability — add subtle backdrop on light text areas */
+.schedule-section {
+  color: #fff;
+}
+.schedule-section .timeline-content h4,
+.schedule-section .timeline-content p {
+  color: rgba(255,255,255,0.95);
+}
+.schedule-section .timeline-time {
+  color: rgba(255,255,255,0.7);
+}
+
+/* Footer keeps its own dark style, sits above gradient */
+.footer-section {
+  background: var(--text) !important;
+  position: relative;
+  z-index: 10;
+}
+
+/* Nav & overlay stay on top */
+nav, #boarding-overlay, #music-player, .rsvp-bar {
+  z-index: 100;
+}
+
+/* Ensure hero content sits above clouds */
+#hero > *:not(.hero-clouds):not(.hero-wave) {
+  position: relative;
+  z-index: 5;
+}
+#hero .hero-wave {
+  z-index: 6;
+}
+
+/* Cloud styles (global) */
+.cloud {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform;
+}
+.cloud svg { display: block; }
+
+/* ════════════════════════════════════════
+   PASSPORT INTRO OVERLAY — SCRAPBOOK COLLAGE INSIDE
+════════════════════════════════════════ */
+#boarding-overlay {
+  position: fixed; inset: 0; z-index: 9999; background: var(--pink-pale, #FFF0F5);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 20px; transition: opacity 0.85s ease; gap: 30px; 
+}
+#boarding-overlay.exit { opacity: 0; pointer-events: none; }
+
+.ph-passport-wrap {
+  position: relative; width: min(340px, 85vw); aspect-ratio: 1 / 1.42; 
+  opacity: 0; animation: fadeUp 0.8s 0.25s ease forwards; perspective: 1500px;
+}
+
+.ph-passport-page {
+  position: absolute; inset: 0; background: #FFF9FB; 
+  border-radius: 4px 16px 16px 4px; padding: 15px; display: flex; flex-direction: column;
+  z-index: 1; border: 1px solid rgba(233, 30, 140, 0.1); overflow: hidden;
+  box-shadow: inset -5px 0 15px rgba(0,0,0,0.05), 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.page-watermark {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  font-family: 'Times New Roman', serif; font-size: 180px; color: var(--pink-deep, #E91E8C);
+  opacity: 0.03; font-weight: bold; pointer-events: none; z-index: 0;
+}
+
+.passport-collage {
+  position: relative; width: 100%; height: 100%; z-index: 2;
+}
+
+.collage-item {
+  position: absolute; background: #fff; padding: 6px 6px 20px 6px;
+  box-shadow: 2px 4px 12px rgba(0,0,0,0.15); border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 2px;
+}
+.collage-item img { width: 100%; height: 100%; object-fit: cover; }
+
+.pic-1 { width: 48%; height: 38%; top: 2%; left: 2%; transform: rotate(-6deg); z-index: 3; }
+.pic-2 { width: 55%; height: 42%; top: 25%; right: 2%; transform: rotate(8deg); z-index: 4; }
+.pic-3 { width: 52%; height: 40%; bottom: 8%; left: 5%; transform: rotate(-4deg); z-index: 5; }
+
+.washi {
+  position: absolute; width: 35px; height: 12px; border-radius: 1px;
+  backdrop-filter: blur(2px); box-shadow: 0 1px 2px rgba(0,0,0,0.1); z-index: 10;
+}
+.tape-1 { top: -6px; left: 50%; transform: translateX(-50%) rotate(-5deg); background: rgba(233, 30, 140, 0.5); }
+.tape-2 { top: 10px; right: -12px; transform: rotate(45deg); background: rgba(244, 143, 177, 0.7); }
+.tape-3 { bottom: -5px; left: 20px; transform: rotate(-15deg); background: rgba(233, 30, 140, 0.5); }
+
+.collage-text {
+  position: absolute; bottom: 3%; right: 5%;
+  font-family: 'Dancing Script', cursive; font-size: 24px;
+  color: var(--pink-deep, #E91E8C); font-weight: bold;
+  transform: rotate(-5deg); z-index: 6;
+}
+
+.cover-shimmer {
+  position: absolute; 
+  top: 0; 
+  left: -150%; 
+  width: 50%; 
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-20deg); 
+  pointer-events: none; 
+  z-index: 4;
+  animation: shimmerSweep 4s infinite 2s;
+}
+
+@keyframes shimmerSweep {
+  0% { left: -150%; }
+  50%, 100% { left: 200%; }
+}
+
+.ph-passport-cover {
+  position: absolute; inset: 0; background: var(--pink-light, #FCE4EC); 
+  border-radius: 4px 16px 16px 4px; box-shadow: inset -4px 0 10px rgba(0,0,0,0.05), -10px 0 20px rgba(233, 30, 140, 0.15);
+  display: flex; flex-direction: column; align-items: center; padding: 35px 20px 25px; 
+  overflow: hidden; z-index: 5; transform-origin: left center; 
+  transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1); transform-style: preserve-3d;
+  background-color: var(--pink-light, #FCE4EC);
+}
+.ph-passport-wrap.is-open .ph-passport-cover { transform: rotateY(-130deg); }
+
+.ph-inner-border { position: absolute; top: 14px; left: 24px; right: 14px; bottom: 14px; border: 1.5px dashed var(--pink-deep, #E91E8C); border-radius: 8px; opacity: 0.4; pointer-events: none; z-index: 1; }
+.ph-passport-cover::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E"); pointer-events: none; mix-blend-mode: multiply; z-index: 0; }
+.ph-spine { position: absolute; top: 0; left: 0; bottom: 0; width: 18px; background: linear-gradient(to right, rgba(233, 30, 140, 0.15), rgba(233, 30, 140, 0.05) 40%, transparent); border-radius: 4px 0 0 4px; z-index: 2; border-right: 1px solid rgba(233, 30, 140, 0.1); }
+.ph-content { position: relative; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: space-between; height: 100%; width: 100%; }
+
+.ph-top-text { font-family: 'Times New Roman', serif; font-size: 17px; font-weight: bold; letter-spacing: 1px; color: var(--pink-deep, #E91E8C); text-align: center; margin-top: 5px; }
+
+.ph-center-cluster { position: relative; margin: 15px 0; }
+.cute-sparkle { position: absolute; opacity: 0.8; animation: twinkle 2s infinite alternate ease-in-out; }
+.sp-1 { top: -5px; left: -10px; width: 22px; height: 22px; animation-delay: 0s; }
+.sp-2 { top: 30px; right: -20px; width: 16px; height: 16px; animation-delay: 0.5s; }
+.sp-3 { bottom: 10px; left: -20px; width: 18px; height: 18px; animation-delay: 1s; }
+@keyframes twinkle { 0% { transform: scale(0.8) rotate(0deg); opacity: 0.4; } 100% { transform: scale(1.2) rotate(15deg); opacity: 1; } }
+
+.ph-circle-seal { width: 135px; height: 135px; border-radius: 50%; border: 2px solid var(--pink-deep, #E91E8C); outline: 1.5px dashed var(--pink-deep, #E91E8C); outline-offset: 4px; padding: 4px; background: var(--pink-pale, #FFF0F5); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(233, 30, 140, 0.25); }
+.passport-profile-pic { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+.ph-bottom-text { font-family: 'Times New Roman', serif; font-size: 20px; letter-spacing: 4px; color: var(--pink-deep, #E91E8C); margin-bottom: 10px; }
+.ph-biometric { margin-bottom: 5px; }
+
+.cute-stamp { position: absolute; bottom: 0px; right: -15px; width: 95px; height: 95px; border: 2.5px double var(--pink-deep, #E91E8C); border-radius: 50%; color: var(--pink-deep, #E91E8C); display: flex; align-items: center; justify-content: center; font-family: 'Special Elite', monospace; opacity: 0; transform-origin: center; animation: stampDrop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1.5s forwards; pointer-events: none; z-index: 10; background: rgba(255, 240, 245, 0.3); }
+.cute-stamp .stamp-inner { display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px dotted var(--pink-deep, #E91E8C); border-radius: 50%; width: 82px; height: 82px; text-align: center; line-height: 1.3; }
+.stamp-title { font-size: 10px; font-weight: bold; letter-spacing: 0.5px; }
+.stamp-date { font-size: 8.5px; border-top: 1px solid var(--pink-deep, #E91E8C); border-bottom: 1px solid var(--pink-deep, #E91E8C); margin: 3px 0; padding: 1px 0; width: 85%; }
+.stamp-loc { font-size: 8px; }
+.stamp-hearts { font-size: 9px; margin-top: 2px; letter-spacing: 2px; }
+@keyframes stampDrop { 0% { opacity: 0; transform: scale(3) rotate(-15deg); } 50% { opacity: 1; transform: scale(0.95) rotate(-15deg); } 100% { opacity: 0.9; transform: scale(1) rotate(-15deg); } }
+
+.ph-cta-wrap { width: 100%; display: flex; justify-content: center; transition: opacity 0.3s ease; }
+.ph-enter-btn { background: var(--pink-deep, #E91E8C); border: none; color: #FFF; font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 3px; padding: 14px 40px; cursor: pointer; border-radius: 30px; transition: all 0.3s ease; text-transform: uppercase; box-shadow: 0 4px 15px rgba(233, 30, 140, 0.3); }
+.ph-enter-btn:hover { background: var(--pink, #F48FB1); transform: translateY(-3px) scale(1.02); box-shadow: 0 6px 20px rgba(233, 30, 140, 0.5); }
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* ════════════════════════════════════════
+   MUSIC PLAYER
+════════════════════════════════════════ */
+#music-player{
+  position:fixed;bottom:76px;right:16px;z-index:9000;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(244,143,177,0.25);
+  border-radius:4px;
+  box-shadow:0 4px 24px rgba(233,30,140,0.08);
+  width:260px;overflow:hidden;
+  transition:all .35s cubic-bezier(.4,0,.2,1);
+}
+#music-player.collapsed{width:auto;border-radius:4px;}
+.mp-bar{padding:10px 14px;display:flex;align-items:center;gap:10px;}
+.mp-play{
+  background:var(--rose);border:none;border-radius:2px;
+  width:32px;height:32px;flex-shrink:0;
+  cursor:pointer;font-size:11px;color:#fff;
+  display:flex;align-items:center;justify-content:center;transition:background .25s;
+}
+.mp-play:hover{background:var(--pink-deep);}
+.mp-info{flex:1;min-width:0;overflow:hidden;}
+.mp-label{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--text-soft);}
+.mp-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mp-toggle{background:none;border:none;color:var(--text-soft);cursor:pointer;font-size:10px;padding:4px;flex-shrink:0;transition:transform .3s;}
+#music-player.collapsed .mp-toggle{transform:rotate(180deg);}
+.mp-wave{display:flex;gap:2px;align-items:center;height:16px;flex-shrink:0;}
+.mp-wave span{display:block;width:2px;border-radius:2px;background:var(--rose);animation:wave 1s ease-in-out infinite;}
+.mp-wave span:nth-child(2){animation-delay:.15s;}
+.mp-wave span:nth-child(3){animation-delay:.3s;}
+.mp-wave span:nth-child(4){animation-delay:.45s;}
+.mp-wave.paused span{animation-play-state:paused;height:4px;}
+@keyframes wave{0%,100%{height:4px;}50%{height:14px;}}
+.mp-playlist{max-height:0;overflow:hidden;transition:max-height .35s ease;border-top:0 solid rgba(244,143,177,0.15);}
+#music-player.expanded .mp-playlist{max-height:160px;border-top-width:1px;}
+.mp-song{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;transition:background .2s;}
+.mp-song:hover{background:rgba(244,143,177,0.07);}
+.mp-song.active{background:rgba(244,143,177,0.12);}
+.mp-song-num{font-size:8px;color:var(--text-soft);width:14px;text-align:center;}
+.mp-song.active .mp-song-num{color:var(--rose);}
+.mp-song-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mp-song-dot{width:5px;height:5px;border-radius:50%;background:var(--rose);opacity:0;flex-shrink:0;}
+.mp-song.active .mp-song-dot{opacity:1;}
+
+/* ════════════════════════════════════════
+   NAV
+════════════════════════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(244,143,177,0.15);
+  padding:0 5%;height:56px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--text);text-decoration:none;letter-spacing:1px;font-style:italic;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-soft);text-decoration:none;transition:color .3s;font-weight:600;}
+.nav-links a:hover{color:var(--text);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{width:22px;height:1.5px;background:var(--text);border-radius:2px;transition:all .3s;}
+.mob-menu{display:none;position:fixed;top:56px;left:0;right:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);z-index:998;padding:16px 5%;flex-direction:column;gap:0;border-bottom:1px solid rgba(244,143,177,0.12);}
+.mob-menu a{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-soft);text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(244,143,177,0.1);transition:color .3s;}
+.mob-menu a:hover{color:var(--text);}
+
+/* ════════════════════════════════════════
+   HERO
+════════════════════════════════════════ */
+#hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;position:relative;overflow:hidden;
+  padding:100px 20px 140px;
+}
+
+#hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(circle, rgba(240,98,146,0.12) 1px, transparent 1px);
+  background-size:32px 32px;
+  pointer-events:none;
+}
+
+#hero::after {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  border: 1px solid rgba(240,98,146,0.12);
+  pointer-events: none;
+}
+
+.hero-plane{position:absolute;font-size:22px;animation:flyP 22s linear infinite;top:16%;opacity:0.25;pointer-events:none;}
+@keyframes flyP{from{left:-50px;}to{left:110%;}}
+.hero-plane-2{position:absolute;font-size:12px;animation:flyP2 30s linear 11s infinite;top:70%;opacity:0.15;pointer-events:none;}
+@keyframes flyP2{from{left:-30px;}to{left:110%;}}
+
+.hero-eyebrow{
+  font-family:'Special Elite',monospace;font-size:8px;letter-spacing:7px;text-transform:uppercase;
+  color:var(--text-soft);margin-bottom:24px;
+  animation:fadeUp 1s .1s ease both;
+}
+.hero-18{
+  font-family:'Cormorant Garamond',serif;font-weight:300;
+  font-size:clamp(90px,20vw,200px);line-height:.9;
+  color:var(--text);
+  letter-spacing:-4px;
+  animation:fadeUp 1.2s .15s ease both;
+}
+.hero-name{
+  font-family:'Dancing Script',cursive;font-weight:400;
+  font-size:clamp(32px,7vw,62px);
+  color:var(--rose);line-height:1;
+  animation:fadeUp 1s .35s ease both;
+}
+.hero-surname{
+  font-family:'Quicksand',sans-serif;font-weight:400;
+  font-size:clamp(9px,2vw,13px);
+  letter-spacing:10px;color:var(--text-soft);
+  margin:10px 0 28px;
+  animation:fadeUp 1s .5s ease both;
+  text-transform:uppercase;
+}
+
+.hero-rule {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 auto 28px;
+  width: fit-content;
+  animation: fadeUp 1s .6s ease both;
+}
+.hero-rule::before, .hero-rule::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: rgba(240,98,146,0.3);
+}
+.hero-rule-icon { color: var(--rose); font-size: 12px; }
+
+.hero-details{
+  background:rgba(255,255,255,0.75);
+  border:1px solid rgba(240,98,146,0.15);
+  border-radius:3px;padding:22px 40px;
+  margin-bottom:36px;
+  animation:fadeUp 1s .7s ease both;
+}
+.hero-details p{
+  font-family:'Special Elite',monospace;font-size:clamp(8px,1.6vw,10px);
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--text-soft);line-height:2.6;
+}
+.hero-details p span{color:var(--text);}
+
+.scroll-cue{
+  position:absolute;bottom:80px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  opacity:0;animation:fadeUp 1s 2.2s forwards;
+}
+.scroll-cue p{font-family:'Quicksand',sans-serif;font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--text-soft);}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom, rgba(240,98,146,0.5), transparent);animation:scrollPulse 2s ease-in-out infinite;}
+@keyframes scrollPulse{0%,100%{opacity:.3;transform:scaleY(1);}50%{opacity:1;transform:scaleY(1.15);}}
+
+.hero-wave{position:absolute;bottom:-2px;left:0;right:0;pointer-events:none;}
+
+/* ════════════════════════════════════════
+   COUNTDOWN
+════════════════════════════════════════ */
+#countdown{
+  padding:70px 20px;text-align:center;
+  position:relative;overflow:hidden;
+  border-top:1px solid rgba(244,143,177,0.1);
+}
+#countdown::before{
+  content:'· · · · · ✈ · · · · · ✈ · · · · · ✈ · · · · ·';
+  display:block;font-size:10px;letter-spacing:8px;
+  color:rgba(240,98,146,0.2);margin-bottom:36px;
+}
+.cd-label{font-family:'Quicksand',sans-serif;font-size:8px;letter-spacing:5px;text-transform:uppercase;color:var(--text-soft);margin-bottom:8px;font-weight:600;}
+.cd-title{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,4vw,32px);color:var(--text);margin-bottom:40px;font-weight:300;font-style:italic;}
+.cd-grid{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.cd-unit{
+  background:#fff;
+  border:1px solid rgba(244,143,177,0.2);
+  border-radius:3px;padding:20px 24px;min-width:80px;
+  position:relative;
+}
+.cd-unit::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right, var(--pink),var(--rose));}
+.cd-num{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,7vw,56px);color:var(--text);line-height:1;font-weight:300;}
+.cd-lbl{font-size:7px;letter-spacing:3px;text-transform:uppercase;color:var(--text-soft);margin-top:6px;font-weight:600;}
+
+/* ════════════════════════════════════════
+   SHARED SECTION STYLES
+════════════════════════════════════════ */
+.section-label{font-family:'Quicksand',sans-serif;font-size:8px;letter-spacing:5px;text-transform:uppercase;color:var(--rose);text-align:center;margin-bottom:10px;font-weight:600;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4.5vw,38px);font-weight:300;font-style:italic;color:var(--text);text-align:center;margin-bottom:40px;}
+.divider{display:flex;align-items:center;gap:14px;max-width:160px;margin:0 auto 40px;}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:rgba(240,98,146,0.2);}
+.divider-heart{font-size:10px;flex-shrink:0;color:var(--rose);}
+
+/* ════════════════════════════════════════
+   INLINE BOARDING PASS
+════════════════════════════════════════ */
+.inline-bp-section {
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.inline-bp-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(240,98,146,0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+.inline-bp {
+  width: min(720px, 96vw);
+  position: relative;
+  z-index: 1;
+}
+.ibp-ticket {
+  width: 100%;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 24px 70px rgba(233,30,140,0.14), 0 4px 20px rgba(233,30,140,0.07);
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 14px 200px;
+}
+.ibp-left { position: relative; overflow: hidden; }
+.ibp-header {
+  background: linear-gradient(135deg, var(--text) 0%, #9C3A8C 50%, #E91E8C 100%);
+  padding: 22px 28px 20px;
+  position: relative;
+  overflow: hidden;
+}
+.ibp-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+.ibp-header::after {
+  content: '✿';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 52px;
+  opacity: 0.07;
+  color: #fff;
+  pointer-events: none;
+}
+.ibp-header-top { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
+.ibp-airline-name { font-family:'Special Elite',monospace; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:rgba(255,255,255,0.75); }
+.ibp-flight-badge { background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); border-radius:20px; padding:4px 14px; font-family:'Special Elite',monospace; font-size:9px; letter-spacing:3px; color:rgba(255,255,255,0.7); }
+.ibp-route { display:flex; align-items:center; gap:12px; padding:22px 28px 18px; }
+.ibp-iata-grp { display:flex; flex-direction:column; gap:3px; flex:1; }
+.ibp-iata-grp.right { text-align:right; align-items:flex-end; }
+.ibp-iata { font-family:'Special Elite',monospace; font-size:clamp(26px,5vw,40px); color:var(--text); letter-spacing:4px; line-height:1; }
+.ibp-city-name { font-size:7px; letter-spacing:2.5px; text-transform:uppercase; color:var(--text-soft); font-weight:600; }
+.ibp-arrow-col { display:flex; flex-direction:column; align-items:center; gap:5px; flex-shrink:0; }
+.ibp-route-line { display:flex; align-items:center; gap:4px; }
+.ibp-route-dot { width:6px; height:6px; border-radius:50%; border:1.5px solid rgba(240,98,146,0.4); }
+.ibp-route-dash { flex:1; height:1px; width:36px; background:linear-gradient(to right, rgba(240,98,146,0.3), var(--rose), rgba(240,98,146,0.3)); }
+.ibp-plane-icon { font-size:18px; color:var(--rose); }
+.ibp-fields { display:grid; grid-template-columns:repeat(3,1fr); padding:14px 28px 22px; gap:16px 8px; border-top:1px dashed rgba(244,143,177,0.25); }
+.ibp-field { display:flex; flex-direction:column; gap:3px; }
+.ibp-lbl { font-size:6px; letter-spacing:2.5px; text-transform:uppercase; color:var(--text-soft); font-weight:600; }
+.ibp-val { font-family:'Cormorant Garamond',serif; font-size:clamp(11px,2vw,14px); color:var(--text); font-style:italic; line-height:1.3; }
+.ibp-val.name-val { font-family:'Dancing Script',cursive; font-size:clamp(16px,3vw,22px); font-style:normal; }
+.ibp-tear {
+  background: repeating-linear-gradient(to bottom, rgba(244,143,177,0.3) 0px, rgba(244,143,177,0.3) 5px, transparent 5px, transparent 11px);
+  position: relative;
+}
+.ibp-tear::before,.ibp-tear::after {
+  content:''; position:absolute; left:50%; transform:translateX(-50%);
+  width:22px; height:22px;
+  background: #fff;
+  border-radius:50%;
+}
+.ibp-tear::before { top:-11px; }
+.ibp-tear::after  { bottom:-11px; }
+.ibp-right {
+  background: linear-gradient(175deg, #FDF0F7 0%, #FCE4EC 50%, #F8BBD9 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:28px 14px; gap:14px; position:relative; overflow:hidden;
+}
+.ibp-right::before {
+  content:'';
+  position: absolute;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  border: 1px solid rgba(240,98,146,0.12);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow:
+    0 0 0 28px rgba(240,98,146,0.06),
+    0 0 0 56px rgba(240,98,146,0.04),
+    0 0 0 84px rgba(240,98,146,0.02);
+  pointer-events: none;
+}
+.ibp-monogram {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.65);
+  border: 1.5px solid rgba(240,98,146,0.35);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  position: relative; z-index: 1;
+  box-shadow: 0 4px 18px rgba(233,30,140,0.1);
+  gap: 0;
+}
+.ibp-mono-initials {
+  font-family: 'Dancing Script', cursive;
+  font-size: 26px;
+  color: var(--text);
+  line-height: 1;
+}
+.ibp-mono-flower {
+  font-size: 10px;
+  color: var(--rose);
+  opacity: 0.7;
+  margin-top: 1px;
+}
+.ibp-stub-name { font-family:'Dancing Script',cursive; font-size:18px; color:var(--text); text-align:center; position:relative; z-index:1; line-height:1.3; }
+.ibp-stub-lbl { font-size:6px; letter-spacing:2.5px; text-transform:uppercase; color:var(--text-soft); font-weight:600; text-align:center; position:relative; z-index:1; }
+.ibp-stub-barcode { display:flex; gap:1.5px; align-items:flex-end; height:32px; position:relative; z-index:1; }
+.ibp-stub-bar { background: rgba(74,25,66,0.4); border-radius:0.5px; flex-shrink:0; }
+.ibp-gate { background:var(--text); color:#fff; border-radius:10px; padding:7px 14px; display:flex; flex-direction:column; align-items:center; gap:2px; position:relative; z-index:1; min-width:70px; }
+.ibp-gate-lbl { font-size:6px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.5); font-weight:600; }
+.ibp-gate-val { font-family:'Special Elite',monospace; font-size:13px; color:#fff; letter-spacing:1px; }
+.ibp-tags { display:flex; gap:5px; position:relative; z-index:1; flex-wrap:wrap; justify-content:center; }
+.ibp-tag { background:rgba(255,255,255,0.7); border:1px solid rgba(233,30,140,0.2); border-radius:20px; padding:4px 10px; font-family:'Special Elite',monospace; font-size:7px; letter-spacing:1px; color:var(--text-mid); text-align:center; }
+
+/* ════════════════════════════════════════
+   COLLAGE
+════════════════════════════════════════ */
+.collage-section{
+  padding:80px 20px;
+}
+.collage-grid{
+  max-width:880px;margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:200px 160px 200px;
+  gap:6px;
+}
+.collage-cell{overflow:hidden;position:relative;}
+.collage-cell img{width:100%;height:100%;object-fit:cover;filter:saturate(0.8) contrast(1.02);transition:transform .6s ease;}
+.collage-cell:hover img{transform:scale(1.04);}
+.collage-cell.tall{grid-row:span 2;}
+.collage-cell.wide{grid-column:span 2;}
+.collage-center-text{
+  background:var(--text);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+}
+.collage-center-text p{font-family:'Quicksand',sans-serif;font-size:8px;letter-spacing:4px;color:rgba(255,255,255,0.5);text-transform:uppercase;}
+.collage-center-text h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:#fff;font-weight:300;}
+
+/* ════════════════════════════════════════
+   PHOTO STRIP
+════════════════════════════════════════ */
+.photo-strip-section {
+  padding: 80px 0;
+  overflow: hidden;
+}
+.photo-strip-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+.strip-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  cursor: grab;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-bottom: 20px;
+  margin: 0 -5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  touch-action: pan-x;
+  box-shadow: inset 0 0 0 1px rgba(244,143,177,0.15), 0 2px 12px rgba(233,30,140,0.06);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.5);
+}
+.strip-wrapper::-webkit-scrollbar { display: none; }
+.strip-wrapper:active { cursor: grabbing; }
+
+.photo-strip {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  padding: 16px 0 8px;
+  will-change: transform;
+  flex-shrink: 0;
+}
+.strip-frame {
+  background: var(--white);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform .3s, box-shadow .3s;
+  border: 1px solid rgba(244,143,177,0.1);
+  user-select: none;
+  border-radius: 2px;
+  overflow: hidden;
+  height: 240px;
+  width: auto;
+  padding: 6px 6px 32px;
+  display: flex;
+  flex-direction: column;
+}
+.strip-frame.landscape { width: 200px; }
+.strip-frame:hover {
+  transform: rotate(0deg) translateY(-8px) !important;
+  box-shadow: 0 12px 28px rgba(233,30,140,0.2), 0 2px 8px rgba(240,98,146,0.1);
+}
+.strip-frame:nth-child(odd) { transform: rotate(-1.5deg); }
+.strip-frame:nth-child(even) { transform: rotate(1.2deg); }
+.strip-frame img {
+  height: 180px;
+  width: auto;
+  min-width: 120px;
+  display: block;
+  filter: saturate(0.8);
+  pointer-events: none;
+  border-radius: 1px;
+  object-fit: cover;
+}
+.strip-caption {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  color: var(--text-soft);
+  text-align: center;
+  margin-top: auto;
+  padding-bottom: 4px;
+  font-style: italic;
+  line-height: 1.2;
+}
+.strip-frame.landscape .strip-caption { margin-top: 6px; }
+
+/* ════════════════════════════════════════
+   SCHEDULE
+════════════════════════════════════════ */
+.schedule-section{
+  padding:80px 20px;position:relative;overflow:hidden;
+}
+.schedule-section::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(circle, rgba(255,255,255,0.03) 1.5px, transparent 1.5px);
+  background-size:28px 28px;
+  pointer-events:none;
+}
+.schedule-section .section-label{color:rgba(255,255,255,0.7);}
+.schedule-section .section-title{color:#fff;}
+.schedule-section .divider::before,.schedule-section .divider::after{background:rgba(255,255,255,0.15);}
+.schedule-section .divider-heart{color:rgba(255,255,255,0.4);}
+
+.timeline{max-width:680px;margin:0 auto;position:relative;padding-left:20px;}
+.timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom, transparent, rgba(255,255,255,0.2) 10%, rgba(255,255,255,0.2) 90%, transparent);}
+.timeline-item{display:flex;gap:24px;margin-bottom:30px;padding-left:24px;position:relative;}
+.timeline-dot{position:absolute;left:-4px;top:5px;width:8px;height:8px;border-radius:50%;background:var(--rose);flex-shrink:0;}
+.timeline-time{font-family:'Special Elite',monospace;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.45);min-width:72px;padding-top:1px;}
+.timeline-content h4{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:300;color:rgba(255,255,255,0.9);margin-bottom:3px;font-style:italic;}
+.timeline-content p{font-size:10px;color:rgba(255,255,255,0.4);line-height:1.5;letter-spacing:0.5px;}
+
+/* ════════════════════════════════════════
+   DRESS CODE
+════════════════════════════════════════ */
+.dresscode-section{padding:80px 20px;text-align:center;}
+.dress-swatches{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:32px;}
+.swatch{display:flex;flex-direction:column;align-items:center;gap:10px;}
+.swatch-circle{
+  width:64px;height:64px;border-radius:50%;
+  box-shadow:0 2px 16px rgba(233,30,140,0.08);
+  border:2px solid rgba(255,255,255,0.9);
+  outline: 1px solid rgba(244,143,177,0.15);
+}
+.swatch-label{font-family:'Quicksand',sans-serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--text-soft);font-weight:600;}
+.dress-note{max-width:460px;margin:32px auto 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--text-mid);line-height:1.9;}
+
+/* ════════════════════════════════════════
+   RSVP
+════════════════════════════════════════ */
+#rsvp{padding:80px 20px;text-align:center;}
+.rsvp-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--text-mid);max-width:440px;margin:20px auto 36px;line-height:1.9;font-weight:300;}
+.gform-btn{
+  display:inline-block;
+  background:var(--text);
+  color:#fff;
+  font-family:'Quicksand',sans-serif;font-weight:600;font-size:8px;letter-spacing:5px;text-transform:uppercase;
+  padding:16px 40px;text-decoration:none;
+  border-radius:2px;
+  transition:all .3s;
+}
+.gform-btn:hover{background:var(--rose);transform:translateY(-1px);}
+
+/* ════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════ */
+.footer-section{
+  text-align:center;padding:70px 20px 100px;
+  background:var(--text);
+  position:relative;overflow:hidden;
+}
+.footer-rule {
+  width: 40px;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+  margin: 0 auto 28px;
+}
+.footer-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(18px,3.5vw,28px);color:rgba(255,255,255,0.85);max-width:480px;margin:0 auto 24px;line-height:1.6;font-weight:300;position:relative;z-index:1;}
+.footer-name{font-family:'Quicksand',sans-serif;font-weight:600;font-size:9px;letter-spacing:6px;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:8px;position:relative;z-index:1;}
+.footer-date{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(255,255,255,0.3);font-style:italic;position:relative;z-index:1;}
+.footer-plane{font-size:18px;margin:20px 0 6px;opacity:0.3;position:relative;z-index:1;}
+.footer-copy{font-family:'Quicksand',sans-serif;font-size:8px;letter-spacing:3px;color:rgba(255,255,255,0.2);position:relative;z-index:1;}
+
+/* RSVP BAR */
+.rsvp-bar{
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);
+  padding:10px 20px;
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  z-index:999;border-top:1px solid rgba(244,143,177,0.15);
+}
+.rsvp-bar p{font-family:'Quicksand',sans-serif;font-weight:600;font-size:8px;letter-spacing:2.5px;color:var(--text-soft);text-transform:uppercase;}
+.rsvp-btn{
+  background:var(--rose);color:#fff;border:none;
+  font-family:'Quicksand',sans-serif;font-weight:600;font-size:8px;letter-spacing:3px;text-transform:uppercase;
+  padding:10px 24px;cursor:pointer;transition:all .3s;border-radius:2px;
+}
+.rsvp-btn:hover{background:var(--pink-deep);transform:translateY(-1px);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* Cloud details card */
+.cloud-details-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 45px 30px;
+  border-radius: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(233, 30, 140, 0.08);
+  border: 1px solid rgba(233, 30, 140, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  overflow: hidden;
+  animation: floatCard 4s ease-in-out infinite;
+}
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.elegant-detail-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.elegant-label {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--pink-deep, #E91E8C);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  opacity: 0.8;
+}
+.elegant-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  font-style: italic;
+  color: #444;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+}
+.cloud-details-card::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1.5px dashed var(--pink-mid, #F8BBD9);
+  border-radius: 12px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ════════════════════════════════════════
+   SECTION CARDS — frosted glass cards for each section
+════════════════════════════════════════ */
+.section-card {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 28px;
+  box-shadow:
+    0 8px 40px rgba(233, 30, 140, 0.10),
+    0 2px 12px rgba(244, 143, 177, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  margin: 0 auto 40px;
+  max-width: 960px;
+  width: calc(100% - 40px);
+  position: relative;
+  overflow: hidden;
+}
+.section-card::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1.5px dashed rgba(244, 143, 177, 0.25);
+  border-radius: 18px;
+  pointer-events: none;
+  z-index: 0;
+}
+.section-card > * { position: relative; z-index: 1; }
+
+/* Countdown card */
+#countdown.section-card {
+  padding: 60px 40px 56px;
+  text-align: center;
+}
+
+/* Boarding pass card */
+.inline-bp-section.section-card {
+  padding: 60px 30px;
+}
+
+/* Collage card */
+.collage-section.section-card {
+  padding: 60px 30px;
+}
+
+/* Photo strip card */
+.photo-strip-section.section-card {
+  padding: 60px 0 40px;
+  overflow: hidden;
+}
+.photo-strip-section.section-card::before { display: none; }
+.photo-strip-section.section-card .photo-strip-container { padding: 0 30px; }
+
+/* Schedule card */
+.schedule-section.section-card {
+  background: rgba(74, 25, 66, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 8px 40px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  overflow: hidden;
+  padding-top: 40px;
+}
+.schedule-section.section-card::before {
+  border-color: rgba(255,255,255,0.08);
+}
+
+/* Dress code card */
+.dresscode-section.section-card {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+/* RSVP card */
+#rsvp.section-card {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+/* wrapper to center the cards */
+.cards-wrapper {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ════════════════════════════════════════
+   PER-CARD PHOTO CAROUSEL
+════════════════════════════════════════ */
+.card-photo-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background: rgba(255,255,255,0.06);
+  border: 2px dashed rgba(255,255,255,0.18);
+}
+.card-photo-slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.card-photo-slide {
+  flex: 0 0 33.333%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+}
+.card-photo-slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-photo-placeholder {
+  font-size: 28px;
+  opacity: 0.35;
+  position: relative;
+  z-index: 1;
+}
+.card-photo-label {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 7px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+.card-photo-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(0,0,0,0.28);
+  color: rgba(255,255,255,0.85);
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.2s, transform 0.2s;
+  backdrop-filter: blur(4px);
+}
+.card-photo-btn:hover {
+  background: rgba(244,143,177,0.4);
+  transform: translateY(-50%) scale(1.1);
+}
+.card-photo-btn.prev { left: 6px; }
+.card-photo-btn.next { right: 6px; }
+.card-photo-dots {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  z-index: 10;
+}
+.card-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+.card-dot.active {
+  background: var(--pink);
+  transform: scale(1.3);
+}
+
+/* ════════════════════════════════════════
+   SCROLLABLE SCHEDULE
+════════════════════════════════════════ */
+.schedule-scroll-outer {
+  position: relative;
+  padding: 0 30px 30px;
+}
+.schedule-scroll-track {
+  overflow: hidden;
+  border-radius: 12px;
+}
+.timeline-scrollable {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 10px 4px 10px;
+  transition: scroll-behavior 0.3s ease;
+}
+.timeline-scrollable::-webkit-scrollbar { display: none; }
+
+.timeline-card {
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 18px;
+  padding: 24px 22px;
+  position: relative;
+  transition: background 0.3s, transform 0.3s;
+  overflow: hidden;
+}
+.timeline-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--pink), var(--rose));
+  border-radius: 18px 18px 0 0;
+}
+.timeline-card:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-3px);
+}
+.timeline-card-time {
+  font-family: 'Special Elite', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--pink);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.timeline-card-time::before {
+  content: '✈';
+  font-size: 10px;
+  opacity: 0.6;
+}
+.timeline-card h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 8px;
+  font-style: italic;
+  line-height: 1.3;
+}
+.timeline-card p {
+  font-size: 10px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+}
+
+/* Schedule nav buttons */
+.schedule-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+.sched-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.75);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+.sched-btn:hover {
+  background: rgba(244, 143, 177, 0.25);
+  border-color: var(--pink);
+  color: #fff;
+  transform: scale(1.08);
+}
+.sched-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.sched-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+.sched-dot.active {
+  background: var(--pink);
+  transform: scale(1.3);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  /* 1. Navbar & Menu */
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .mob-menu { padding: 10px 5%; }
+
+  /* 2. Global Spacing & Typography */
+  .section-title { font-size: clamp(22px, 6vw, 28px); margin-bottom: 24px; }
+  .divider { margin: 0 auto 24px; }
+  .section-label { margin-bottom: 8px; }
+
+  /* 3. Hero Section */
+  #hero { padding: 80px 16px 100px; }
+  .hero-details { padding: 16px; margin-bottom: 24px; }
+  .cloud-details-card { padding: 30px 20px; width: 100%; gap: 16px; }
+  .elegant-value { font-size: 18px; }
+
+  /* 4. Section Cards General Spacing */
+  .cards-wrapper { padding: 0 16px; }
+  .section-card {
+    width: 100%; /* Let the wrapper handle the outer spacing */
+    margin: 0 auto 24px; /* Reduce vertical gap between cards */
+    border-radius: 20px;
+  }
+
+  /* 5. Individual Card Inner Paddings */
+  #countdown.section-card,
+  .inline-bp-section.section-card,
+  .collage-section.section-card,
+  .dresscode-section.section-card,
+  #rsvp.section-card {
+    padding: 32px 16px; /* Uniform, breathable mobile padding */
+  }
+
+  /* Countdown tweaks */
+  .cd-grid { gap: 8px; flex-wrap: nowrap; }
+  .cd-unit { padding: 12px 8px; min-width: 0; flex: 1; }
+  .cd-num { font-size: clamp(24px, 6vw, 36px); }
+  .cd-lbl { font-size: 6px; letter-spacing: 1.5px; }
+
+  /* Boarding Pass tweaks */
+  .ibp-ticket { grid-template-columns: 1fr; border-radius: 16px; }
+  .ibp-header { padding: 16px; }
+  .ibp-route { padding: 16px 16px 12px; }
+  .ibp-fields { grid-template-columns: repeat(2, 1fr); padding: 12px 16px 16px; }
+  .ibp-tear {
+    background: repeating-linear-gradient(to right, rgba(244,143,177,0.3) 0px, rgba(244,143,177,0.3) 5px, transparent 5px, transparent 11px);
+    height: 14px; width: 100%;
+  }
+  .ibp-tear::before { top: 50%; transform: translate(-50%, -50%); left: -7px; }
+  .ibp-tear::after  { top: 50%; transform: translate(50%, -50%); left: auto; right: -7px; }
+  .ibp-right { flex-direction: row; flex-wrap: wrap; justify-content: center; padding: 20px 16px; gap: 12px; border-radius: 0 0 16px 16px; }
+  .ibp-right::before { display: none; }
+  .ibp-monogram { width: 56px; height: 56px; flex-shrink: 0; }
+  .ibp-mono-initials { font-size: 20px; }
+
+  /* Collage tweaks */
+  .collage-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 140px 140px 140px; gap: 6px; }
+  .collage-cell.tall { grid-row: span 1; }
+  .collage-cell.wide { grid-column: span 1; }
+  .collage-cell:nth-child(4) { display: none; }
+
+  /* Photo Strip tweaks */
+  .photo-strip-section.section-card { padding: 32px 0 24px; }
+  .photo-strip-section.section-card .photo-strip-container { padding: 0 16px; }
+  .strip-wrapper { touch-action: pan-x; -webkit-overflow-scrolling: touch; padding-bottom: 12px; }
+
+  /* Schedule tweaks */
+  .schedule-section.section-card { padding-top: 32px; }
+  .schedule-section.section-card > div:first-child { padding: 0 16px 10px !important; }
+  .schedule-scroll-outer { padding: 0 16px 20px; }
+  .timeline-card { flex: 0 0 240px; padding: 20px 16px; }
+  .schedule-nav { gap: 10px; margin-top: 16px; }
+  .sched-btn { width: 38px; height: 38px; font-size: 14px; }
+
+  /* Dress Code tweaks */
+  .dress-swatches { gap: 10px; }
+  .swatch-circle { width: 54px; height: 54px; }
+
+  /* Footer & RSVP Bar tweaks */
+  .footer-section { padding: 50px 16px 90px; } /* Added bottom padding so the fixed RSVP bar doesn't cover text */
+  .rsvp-bar { flex-direction: column; gap: 8px; padding: 12px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- 🌍 GLOBAL CLOUDS — floating across whole site except footer -->
+<div id="global-clouds"></div>
+
+<!-- 🌙 NIGHT SKY (STARS + MOON) — fades in at schedule -->
+<div id="night-sky">
+  <div class="moon"></div>
+  <div class="stars" id="stars-container"></div>
+</div>
+
+<audio id="bgMusic" loop preload="auto">
+  <source src="https://res.cloudinary.com/dmcnpy20v/video/upload/v1774607271/CHROMATICS_GIRLS_JUST_WANNA_HAVE_SOME_clht9e.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PASSPORT OVERLAY -->
+<div id="boarding-overlay">
+  <div class="ph-passport-wrap" id="ph-passport-wrap">
+    <div class="ph-passport-page">
+      <div class="page-watermark">18</div>
+      <div class="passport-collage">
+        <div class="collage-item pic-1">
+          <div class="washi tape-1"></div>
+          <img src="11.jpg" alt="Amanda Collage 1">
+        </div>
+        <div class="collage-item pic-2">
+          <div class="washi tape-2"></div>
+          <img src="111.jpg" alt="Amanda Collage 2">
+        </div>
+        <div class="collage-item pic-3">
+          <div class="washi tape-3"></div>
+          <img src="1111.jpg" alt="Amanda Collage 3">
+        </div>
+        <div class="collage-text">Amanda ♥</div>
+      </div>
+    </div>
+    <div class="ph-passport-cover">
+      <div class="cover-shimmer"></div><div class="ph-spine"></div>
+      <div class="ph-inner-border"></div>
+      <div class="ph-content">
+        <div class="ph-top-text">✧ REPUBLIKA NG PILIPINAS ✧</div>
+        <div class="ph-center-cluster">
+          <svg class="cute-sparkle sp-1" viewBox="0 0 24 24"><path fill="var(--pink-deep, #E91E8C)" d="M12 0l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>
+          <svg class="cute-sparkle sp-2" viewBox="0 0 24 24"><path fill="var(--pink-deep, #E91E8C)" d="M12 0l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>
+          <svg class="cute-sparkle sp-3" viewBox="0 0 24 24"><path fill="var(--pink-deep, #E91E8C)" d="M12 0l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>
+          <div class="ph-circle-seal">
+            <img src="1.jpg" alt="Amanda" class="passport-profile-pic">
+          </div>
+        </div>
+        <div class="ph-bottom-text">♡ PASAPORTE ♡</div>
+        <div class="ph-biometric">
+          <svg viewBox="0 0 24 24" width="28" height="28">
+            <rect x="2" y="6" width="20" height="12" rx="4" fill="none" stroke="var(--pink-deep, #D81B60)" stroke-width="1.5"/>
+            <circle cx="12" cy="12" r="3.5" fill="none" stroke="var(--pink-deep, #D81B60)" stroke-width="1.5"/>
+            <path d="M 12 12 L 12 12" stroke="var(--pink-deep, #D81B60)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="passport-stamp cute-stamp">
+          <div class="stamp-inner">
+            <span class="stamp-title">✈ FIRST CLASS</span>
+            <span class="stamp-date">MAY 16 2026</span>
+            <span class="stamp-loc">AMANDA'S</span>
+            <span class="stamp-hearts">♡ ♡ ♡</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ph-cta-wrap" id="enter-btn-wrap">
+    <button class="ph-enter-btn" onclick="openPassportAndEnter()"><span>FLIP OPEN ♡</span></button>
+  </div>
+</div>
+
+<!-- MUSIC PLAYER -->
+<div id="music-player" class="collapsed">
+  <div class="mp-bar">
+    <button class="mp-play" id="playBtn" onclick="toggleAudio()">▶</button>
+    <div class="mp-info">
+      <div class="mp-label">Now Playing</div>
+      <div class="mp-title" id="mpTitle">Girls Just Want to Have Fun</div>
+    </div>
+    <div class="mp-wave paused" id="audioWave"><span></span><span></span><span></span><span></span></div>
+    <button class="mp-toggle" onclick="togglePlaylist()">▲</button>
+  </div>
+  <div class="mp-playlist">
+    <div class="mp-song active" onclick="selectSong(0)">
+      <span class="mp-song-num">1</span>
+      <div class="mp-song-title">Girls Just Want to Have Fun</div>
+      <div class="mp-song-dot"></div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-brand">Amanda Pritzie</a>
+  <ul class="nav-links">
+    <li><a href="#collage">Gallery</a></li>
+    <li><a href="#schedule">Programme</a></li>
+    <li><a href="#dresscode">Dress Code</a></li>
+    <li><a href="#rsvp">RSVP</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMob()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="#collage" onclick="toggleMob()">Gallery</a>
+  <a href="#eighteens" onclick="toggleMob()">The 18s</a>
+  <a href="#schedule" onclick="toggleMob()">Programme</a>
+  <a href="#dresscode" onclick="toggleMob()">Dress Code</a>
+  <a href="#rsvp" onclick="toggleMob()">RSVP</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-plane">✈</div>
+  <div class="hero-plane-2">✈</div>
+  <p class="hero-eyebrow">✈ &nbsp; You Are Cordially Invited &nbsp; ✈</p>
+  <h1 class="hero-name">Amanda Pritzie</h1>
+  <div class="hero-rule"><div class="hero-rule-icon">✈</div></div>
+  <div class="cloud-details-card">
+    <div class="elegant-detail-row">
+      <div class="elegant-label">DATE</div>
+      <div class="elegant-value">Saturday, the Sixteenth of May, 2026</div>
+    </div>
+    <div class="elegant-detail-row">
+      <div class="elegant-label">TIME</div>
+      <div class="elegant-value">Six o'clock in the Evening</div>
+    </div>
+    <div class="elegant-detail-row">
+      <div class="elegant-label">VENUE</div>
+      <div class="elegant-value">Winford Resort and Casino Ballroom<br>Metro Manila</div>
+    </div>
+  </div>
+  <div class="scroll-cue">
+    <p>Scroll</p>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- CARDS WRAPPER -->
+<div class="cards-wrapper">
+
+<!-- COUNTDOWN -->
+<div id="countdown" class="section-card reveal">
+  <p class="cd-label">✈ Departure In</p>
+  <p class="cd-title">Counting Down to the Big Night</p>
+  <div class="cd-grid">
+    <div class="cd-unit"><div class="cd-num" id="cdD">00</div><div class="cd-lbl">Days</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cdH">00</div><div class="cd-lbl">Hours</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cdM">00</div><div class="cd-lbl">Minutes</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cdS">00</div><div class="cd-lbl">Seconds</div></div>
+  </div>
+</div>
+
+<!-- INLINE BOARDING PASS -->
+<div class="inline-bp-section section-card reveal">
+  <p class="section-label" style="margin-bottom:24px;">Your Invitation</p>
+  <div class="inline-bp">
+    <div class="ibp-ticket">
+      <div class="ibp-left">
+        <div class="ibp-header">
+          <div class="ibp-header-top">
+            <span class="ibp-airline-name">✈ &nbsp; Debut Air &nbsp; ✈</span>
+            <span class="ibp-flight-badge">Flight L&C-018</span>
+          </div>
+        </div>
+        <div class="ibp-route">
+          <div class="ibp-iata-grp">
+            <div class="ibp-iata">YOUTH</div>
+            <div class="ibp-city-name">Before Eighteen</div>
+          </div>
+          <div class="ibp-arrow-col">
+            <div class="ibp-plane-icon">✈</div>
+            <div class="ibp-route-line">
+              <div class="ibp-route-dot"></div>
+              <div class="ibp-route-dash"></div>
+              <div class="ibp-route-dot"></div>
+            </div>
+          </div>
+          <div class="ibp-iata-grp right">
+            <div class="ibp-iata">WOMAN</div>
+            <div class="ibp-city-name">Officially Eighteen</div>
+          </div>
+        </div>
+        <div class="ibp-fields">
+          <div class="ibp-field" style="grid-column:span 2;">
+            <span class="ibp-lbl">Passenger</span>
+            <span class="ibp-val name-val">Amanda Pritzie Cabauatan</span>
+          </div>
+          <div class="ibp-field">
+            <span class="ibp-lbl">Class</span>
+            <span class="ibp-val">First Class ✨</span>
+          </div>
+          <div class="ibp-field">
+            <span class="ibp-lbl">Date</span>
+            <span class="ibp-val">May 16, 2026</span>
+          </div>
+          <div class="ibp-field">
+            <span class="ibp-lbl">Departure</span>
+            <span class="ibp-val">6:00 PM</span>
+          </div>
+          <div class="ibp-field">
+            <span class="ibp-lbl">Venue</span>
+            <span class="ibp-val">Winford Resort & Casino Ballroom</span>
+          </div>
+        </div>
+      </div>
+      <div class="ibp-tear"></div>
+      <div class="ibp-right">
+        <div class="ibp-monogram">
+          <div class="ibp-mono-initials">APC</div>
+          <div class="ibp-mono-flower">✿ ✿ ✿</div>
+        </div>
+        <div class="ibp-stub-lbl">Boarding Pass</div>
+        <div class="ibp-stub-name">Amanda<br>Pritzie</div>
+        <div class="ibp-gate">
+          <span class="ibp-gate-lbl">Gate</span>
+          <span class="ibp-gate-val">PINK 💕</span>
+        </div>
+        <div class="ibp-tags">
+          <div class="ibp-tag">Seat 18A</div>
+          <div class="ibp-tag">1st Class</div>
+        </div>
+        <div class="ibp-stub-barcode" id="inline-barcode"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COLLAGE -->
+<div class="collage-section section-card reveal" id="collage">
+  <div style="text-align:center;margin-bottom:40px;">
+    <p class="section-label">A Gallery of Moments</p>
+    <h2 class="section-title">Her Story</h2>
+    <div class="divider"><div class="divider-heart">✈</div></div>
+  </div>
+  <div class="collage-grid">
+    <div class="collage-cell tall"><img src="1000022615.jpg" alt="Portrait"></div>
+    <div class="collage-cell"><img src="1000022616.jpg" alt="Roses"></div>
+    <div class="collage-cell"><img src="1000022632.jpg" alt="Detail"></div>
+    <div class="collage-center-text"><p>Amanda</p><h3>Photo Collage</h3></div>
+    <div class="collage-cell"><img src="1000022623.jpg" alt="Candle"></div>
+    <div class="collage-cell"><img src="1000022631.jpg" alt="Gift"></div>
+    <div class="collage-cell wide"><img src="1000022621.jpg" alt="Celebration"></div>
+  </div>
+</div>
+
+<!-- PHOTO STRIP -->
+<section class="photo-strip-section section-card reveal">
+  <div class="photo-strip-container">
+    <p class="section-label">Through the Years</p>
+    <h2 class="section-title">Photo Memories</h2>
+    <div class="divider"><div class="divider-heart">✈</div></div>
+    <div class="strip-wrapper" id="photoStripWrapper">
+      <div class="photo-strip" id="photoStrip">
+        <div class="strip-frame portrait"><img src="44.jpg" alt="Portrait 1" draggable="false">
+        <div class="strip-frame portrait"><img src="444.jpg" alt="Landscape 1" draggable="false">
+        <div class="strip-frame portrait"><img src="4444.jpg" alt="Portrait 2" draggable="false">
+        <div class="strip-frame portrait"><img src="44444.jpg" alt="Landscape 2" draggable="false">
+        <div class="strip-frame portrait"><img src="5.jpg" alt="Portrait 3" draggable="false">
+        <div class="strip-frame landscape"><img src="55.jpg" alt="Landscape 3" draggable="false">
+        <div class="strip-frame portrait"><img src="555.jpg" alt="Portrait 4" draggable="false">
+        <div class="strip-frame landscape"><img src="5555.png" alt="Landscape 4" draggable="false">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<div class="schedule-section section-card reveal" id="schedule">
+  <div style="max-width:900px;margin:0 auto;position:relative;z-index:1;padding:0 30px 10px;">
+    <p class="section-label">Evening Programme</p>
+    <h2 class="section-title">Schedule of Activities</h2>
+    <div class="divider"><div class="divider-heart">✈</div></div>
+  </div>
+
+  <div class="schedule-scroll-outer">
+    <div class="schedule-scroll-track">
+      <div class="timeline-scrollable" id="scheduleTrack">
+        <!-- Card 1 -->
+        <div class="timeline-card">
+          <div class="card-photo-carousel" data-index="0">
+            <div class="card-photo-slides">
+              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
+            </div>
+            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
+            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
+            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          </div>
+          <div class="timeline-card-time">5:30 PM</div><h4>Guest Arrival & Reception</h4><p>Welcome drinks and cocktail hour in the foyer</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="timeline-card">
+          <div class="card-photo-carousel" data-index="0">
+            <div class="card-photo-slides">
+              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
+            </div>
+            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
+            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
+            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          </div>
+          <div class="timeline-card-time">6:00 PM</div><h4>Grand Entrance of the Debutante</h4><p>The night begins as Amanda makes her entrance</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="timeline-card">
+          <div class="card-photo-carousel" data-index="0">
+            <div class="card-photo-slides">
+              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
+            </div>
+            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
+            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
+            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          </div>
+          <div class="timeline-card-time">6:15 PM</div><h4>Opening Prayer & Welcome Remarks</h4><p>A moment of gratitude and love</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="timeline-card">
+          <div class="card-photo-carousel" data-index="0">
+            <div class="card-photo-slides">
+              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
+            </div>
+            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
+            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
+            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          </div>
+          <div class="timeline-card-time">6:30 PM</div><h4>18 Roses Ceremony</h4><p>Gentlemen who have shaped her life present a rose</p>
+        </div>
+        <!-- Card 5 -->
+        <div class="timeline-card">
+          <div class="card-photo-carousel" data-index="0">
+            <div class="card-photo-slides">
+              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
+            </div>
+            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
+            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
+            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          </div>
+          <div class="timeline-card-time">7:00 PM</div><h4>18 Candles Ceremony</h4><p>Ladies light a candle and share their wishes</p>
+        </div>
+        <!-- Card 6 -->
+        <div class="timeline-card">
+          <div class="card-photo-carousel" data-index="0">
+            <div class="card-photo-slides">
+              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
+            </div>
+            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
+            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
+            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          </div>
+          <div class="timeline-card-time">7:30 PM</div><h4>18 Bags Ceremony</h4><p>Gifts of love and life lessons presented</p>
+        </div>
+        <!-- Card 7 -->
+        <div class="timeline-card">
+          <div class="card-photo-carousel" data-index="0">
+            <div class="card-photo-slides">
+              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
+            </div>
+            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
+            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
+            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          </div>
+          <div class="timeline-card-time">8:00 PM</div><h4>18 Blue Bills Ceremony</h4><p>Bestowing abundance and prosperity</p>
+        </div>
+        <!-- Card 8 -->
+        <div class="timeline-card">
+          <div class="card-photo-carousel" data-index="0">
+            <div class="card-photo-slides">
+              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
+            </div>
+            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
+            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
+            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          </div>
+          <div class="timeline-card-time">8:30 PM</div><h4>18 Wishes</h4><p>Heartfelt words from those who love her most</p>
+        </div>
+        <!-- Card 9 -->
+        <div class="timeline-card">
+          <div class="card-photo-carousel" data-index="0">
+            <div class="card-photo-slides">
+              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
+            </div>
+            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
+            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
+            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          </div>
+          <div class="timeline-card-time">9:00 PM</div><h4>Formal Dinner</h4><p>A feast shared in celebration</p>
+        </div>
+        <!-- Card 10 -->
+        <div class="timeline-card">
+          <div class="card-photo-carousel" data-index="0">
+            <div class="card-photo-slides">
+              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
+            </div>
+            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
+            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
+            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          </div>
+          <div class="timeline-card-time">10:00 PM</div><h4>Cotillion de Honor</h4><p>The elegant debut waltz performance</p>
+        </div>
+        <!-- Card 11 -->
+        <div class="timeline-card">
+          <div class="card-photo-carousel" data-index="0">
+            <div class="card-photo-slides">
+              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
+            </div>
+            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
+            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
+            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          </div>
+          <div class="timeline-card-time">10:30 PM</div><h4>Open Floor — Dancing & Celebration</h4><p>The night is young — dance, laugh, celebrate!</p>
+        </div>
+        <!-- Card 12 -->
+        <div class="timeline-card">
+          <div class="card-photo-carousel" data-index="0">
+            <div class="card-photo-slides">
+              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
+              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
+            </div>
+            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
+            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
+            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          </div>
+          <div class="timeline-card-time">12:00 AM</div><h4>Farewell & Photo Opportunity</h4><p>End the night with one last memory</p>
+        </div>
+      </div>
+    </div>
+    <!-- Navigation Buttons -->
+    <div class="schedule-nav">
+      <button class="sched-btn" id="schedPrev" onclick="schedScroll(-1)">&#8592;</button>
+      <div class="sched-dots" id="schedDots"></div>
+      <button class="sched-btn" id="schedNext" onclick="schedScroll(1)">&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<!-- DRESS CODE -->
+<div class="dresscode-section section-card reveal" id="dresscode">
+  <p class="section-label">Dress Code</p>
+  <h2 class="section-title">What to Wear</h2>
+  <div class="divider"><div class="divider-heart">✈</div></div>
+  <p style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--text);font-style:italic;font-weight:300;margin-bottom:6px;">Black Tie Optional</p>
+  <p style="font-family:'Quicksand',sans-serif;font-size:8px;letter-spacing:3px;color:var(--text-soft);text-transform:uppercase;font-weight:600;">Motif Colours for Guests</p>
+  <div class="dress-swatches">
+    <div class="swatch"><div class="swatch-circle" style="background:#F48FB1;"></div><div class="swatch-label">Soft Pink</div></div>
+    <div class="swatch"><div class="swatch-circle" style="background:#FCE4EC;"></div><div class="swatch-label">Blush</div></div>
+    <div class="swatch"><div class="swatch-circle" style="background:#F8BBD9;"></div><div class="swatch-label">Rose Mist</div></div>
+    <div class="swatch"><div class="swatch-circle" style="background:#E91E8C;"></div><div class="swatch-label">Deep Rose</div></div>
+    <div class="swatch"><div class="swatch-circle" style="background:#FFF0F5;"></div><div class="swatch-label">Ivory Pink</div></div>
+  </div>
+  <p class="dress-note">
+    Wear your prettiest shades of pink — because tonight, every guest becomes part of Amanda's most beautiful chapter yet.
+  </p>
+</div>
+
+<!-- RSVP -->
+<section id="rsvp" class="section-card reveal">
+  <p class="section-label">Join the Journey</p>
+  <h2 class="section-title">RSVP</h2>
+  <div class="divider"><div class="divider-heart">✈</div></div>
+  <p class="rsvp-note">Please confirm your attendance by <strong>May 20, 2025</strong>.<br>We cannot wait to celebrate this beautiful new chapter with you.</p>
+  <a href="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform" target="_blank" class="gform-btn">
+    Confirm Attendance
+  </a>
+</section>
+
+</div><!-- end .cards-wrapper -->
+
+<!-- FOOTER -->
+<div class="footer-section reveal">
+  <div class="footer-rule"></div>
+  <p class="footer-quote">"Tonight, we celebrate not just eighteen years, but a lifetime of beauty yet to unfold."</p>
+  <div style="margin:32px 0 16px;">
+    <div class="footer-plane">✈</div>
+  </div>
+  <p class="footer-name">Amanda Pritzie Cabauatan</p>
+  <p class="footer-date">Saturday, May 16, 2026 · Winford Resort and Casino Ballroom, Metro Manila</p>
+  <div style="width:40px;height:1px;background:rgba(255,255,255,0.12);margin:28px auto 20px;"></div>
+  <p class="footer-copy">With Love — From Your Family · #AmandaPritzAt18</p>
+</div>
+
+<!-- RSVP BAR -->
+<div class="rsvp-bar">
+  <p>Kindly RSVP by May 20, 2025</p>
+  <button class="rsvp-btn" onclick="alert('Please contact us at +63 900 000 0000')">Confirm Attendance</button>
+</div>
+
+<script>
+// ── GLOBAL CLOUDS (floating across whole site except footer) ──
+(function() {
+  const container = document.getElementById('global-clouds');
+  if (!container) return;
+
+  function makeCloudSVG(w, h, opacity, color, variant) {
+    const cx = w / 2, cy = h * 0.65;
+    const rx = w * 0.36, ry = h * 0.44;
+    let puffs = '';
+    if (variant === 0) {
+      puffs = `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry * 0.70}"/><ellipse cx="${cx - rx * 0.55}" cy="${cy - ry * 0.15}" rx="${rx * 0.50}" ry="${ry * 0.50}"/><ellipse cx="${cx + rx * 0.48}" cy="${cy - ry * 0.10}" rx="${rx * 0.44}" ry="${ry * 0.44}"/><ellipse cx="${cx - rx * 0.05}" cy="${cy - ry * 0.48}" rx="${rx * 0.40}" ry="${ry * 0.40}"/><ellipse cx="${cx - rx * 0.85}" cy="${cy + ry * 0.10}" rx="${rx * 0.30}" ry="${ry * 0.30}"/><ellipse cx="${cx + rx * 0.82}" cy="${cy + ry * 0.08}" rx="${rx * 0.28}" ry="${ry * 0.28}"/>`;
+    } else if (variant === 1) {
+      puffs = `<ellipse cx="${cx}" cy="${cy}" rx="${rx * 1.1}" ry="${ry * 0.55}"/><ellipse cx="${cx - rx * 0.60}" cy="${cy - ry * 0.22}" rx="${rx * 0.42}" ry="${ry * 0.42}"/><ellipse cx="${cx + rx * 0.55}" cy="${cy - ry * 0.18}" rx="${rx * 0.38}" ry="${ry * 0.38}"/><ellipse cx="${cx}" cy="${cy - ry * 0.38}" rx="${rx * 0.34}" ry="${ry * 0.34}"/><ellipse cx="${cx - rx * 1.0}" cy="${cy + ry * 0.12}" rx="${rx * 0.24}" ry="${ry * 0.24}"/><ellipse cx="${cx + rx * 0.98}" cy="${cy + ry * 0.10}" rx="${rx * 0.22}" ry="${ry * 0.22}"/>`;
+    } else {
+      puffs = `<ellipse cx="${cx}" cy="${cy}" rx="${rx * 0.75}" ry="${ry * 0.68}"/><ellipse cx="${cx - rx * 0.38}" cy="${cy - ry * 0.28}" rx="${rx * 0.46}" ry="${ry * 0.46}"/><ellipse cx="${cx + rx * 0.35}" cy="${cy - ry * 0.20}" rx="${rx * 0.40}" ry="${ry * 0.40}"/><ellipse cx="${cx - rx * 0.10}" cy="${cy - ry * 0.60}" rx="${rx * 0.35}" ry="${ry * 0.35}"/><ellipse cx="${cx - rx * 0.45}" cy="${cy - ry * 0.55}" rx="${rx * 0.26}" ry="${ry * 0.26}"/><ellipse cx="${cx + rx * 0.42}" cy="${cy - ry * 0.50}" rx="${rx * 0.24}" ry="${ry * 0.24}"/><ellipse cx="${cx}" cy="${cy - ry * 0.88}" rx="${rx * 0.20}" ry="${ry * 0.20}"/>`;
+    }
+    return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg"><g fill="${color}" opacity="${opacity}">${puffs}</g></svg>`;
+  }
+
+  const cloudDefs = [
+    [520,155,5,0.28,0,0.48,0],[460,138,18,0.22,900,0.42,1],[580,170,30,0.25,1600,0.44,0],
+    [500,148,55,0.20,400,0.38,2],[540,160,70,0.23,1200,0.40,1],[480,142,85,0.26,700,0.36,0],
+    [310,95,10,0.32,550,0.35,1],[260,82,24,0.28,1350,0.30,2],[340,105,40,0.30,200,0.33,0],
+    [280,88,62,0.26,1050,0.28,1],[320,98,76,0.29,1700,0.32,2],[250,80,48,0.31,80,0.30,0],
+    [300,92,90,0.27,1450,0.26,1],[170,55,15,0.35,650,0.22,2],[140,46,33,0.33,1150,0.20,1],
+    [190,60,52,0.36,350,0.24,0],[155,50,66,0.34,1800,0.20,2],[120,40,80,0.38,480,0.18,1],
+    [165,53,44,0.32,960,0.22,0],[130,42,92,0.36,1550,0.17,2],[90,30,20,0.40,730,0.15,0],
+    [80,26,58,0.38,1250,0.14,1],[100,33,74,0.42,320,0.16,2],[75,25,88,0.39,1900,0.13,0]
+  ];
+  const pinkColor = '#F48FB1';
+  const vw = window.innerWidth;
+  const state = cloudDefs.map(([w, h, topPct, speed, offsetPx, opacity, variant], i) => {
+    const cloud = document.createElement('div');
+    cloud.className = 'cloud';
+    cloud.innerHTML = makeCloudSVG(w, h, opacity, pinkColor, variant);
+    cloud.style.top = topPct + '%';
+    let startX = (i % 3 === 0) ? Math.random() * (vw * 1.1) : vw + offsetPx;
+    container.appendChild(cloud);
+    return { el: cloud, w, speed, x: startX };
+  });
+
+  function animateClouds() {
+    state.forEach(s => {
+      s.x -= s.speed;
+      if (s.x < -(s.w + 40)) s.x = window.innerWidth + 60 + Math.random() * 300;
+      s.el.style.transform = `translateX(${s.x}px)`;
+    });
+    requestAnimationFrame(animateClouds);
+  }
+  requestAnimationFrame(animateClouds);
+})();
+
+// ── STARS GENERATION ──
+(function() {
+  const starsContainer = document.getElementById('stars-container');
+  if (!starsContainer) return;
+  const starCount = 120;
+  for (let i = 0; i < starCount; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    const size = Math.random() * 3 + 1;
+    star.style.width = size + 'px';
+    star.style.height = size + 'px';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.animationDelay = Math.random() * 3 + 's';
+    star.style.opacity = 0.4 + Math.random() * 0.5;
+    starsContainer.appendChild(star);
+  }
+})();
+
+// ── NIGHT SKY OPACITY BASED ON SCROLL (schedule section) ──
+(function() {
+  const nightSky = document.getElementById('night-sky');
+  const scheduleSection = document.getElementById('schedule');
+  if (!nightSky || !scheduleSection) return;
+
+  function updateNightSkyOpacity() {
+    const rect = scheduleSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    // Start fading when schedule top reaches bottom of viewport, fully visible when schedule top is at 30% of viewport
+    let progress = 0;
+    if (rect.top < windowHeight && rect.bottom > 0) {
+      // Map: when schedule top is at bottom of screen -> 0, when schedule top is at 30% of screen -> 1
+      const start = windowHeight;
+      const end = windowHeight * 0.3;
+      progress = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
+    } else if (rect.top <= 0) {
+      progress = 1;
+    }
+    // Increase prominence further as we scroll deeper: add extra boost when schedule is passed
+    if (rect.bottom < windowHeight * 0.2) {
+      progress = Math.min(1, progress + 0.2);
+    }
+    nightSky.style.opacity = progress;
+  }
+
+  window.addEventListener('scroll', updateNightSkyOpacity, { passive: true });
+  window.addEventListener('resize', updateNightSkyOpacity);
+  updateNightSkyOpacity();
+})();
+
+// ── PASSPORT & ENTER ──
+document.body.style.overflow='hidden';
+function generateBarcode(containerId, barClass) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  const widths = [2,1,3,1,2,1,1,3,2,1,2,3,1,1,2,1,3,2,1,1,3,1,2,1,3,2,1,1,2,3,1,2];
+  const heights = [44,32,44,28,44,32,36,44,28,44,32,44,24,44,32,44,28,44,32,36,44,24,44,32,44,28,44,36,44,32,28,44];
+  const cls = barClass || (containerId.includes('inline') ? 'ibp-stub-bar' : 'bp-bar');
+  widths.forEach((w, i) => {
+    const bar = document.createElement('div');
+    bar.className = cls;
+    bar.style.width = w + 'px';
+    bar.style.height = Math.round(heights[i] * 0.75) + 'px';
+    el.appendChild(bar);
+  });
+}
+generateBarcode('inline-barcode', 'ibp-stub-bar');
+
+function openPassportAndEnter() {
+  const passportWrap = document.getElementById('ph-passport-wrap');
+  const overlay = document.getElementById('boarding-overlay');
+  const btnWrap = document.getElementById('enter-btn-wrap');
+  btnWrap.style.opacity = '0';
+  btnWrap.style.pointerEvents = 'none';
+  passportWrap.classList.add('is-open');
+  setTimeout(() => {
+    overlay.classList.add('exit');
+    document.body.style.overflow = 'auto';
+    document.body.style.overflowX = 'hidden';
+    setTimeout(() => { overlay.style.display = 'none'; }, 1000);
+    if (!playing) {
+      if (!music.src || music.src === window.location.href) loadSong(0);
+      music.play().then(() => { playing=true; playBtn.textContent='⏸'; wave.classList.remove('paused'); }).catch(()=>{});
+    }
+  }, 4000);
+}
+
+// ── COUNTDOWN ──
+const debut = new Date('2026-05-16T18:00:00+08:00');
+function tick() {
+  const now = new Date();
+  const d = debut - now;
+  if (d <= 0) {
+    document.getElementById('cdD').textContent = '00';
+    document.getElementById('cdH').textContent = '00';
+    document.getElementById('cdM').textContent = '00';
+    document.getElementById('cdS').textContent = '00';
+    return;
+  }
+  document.getElementById('cdD').textContent = String(Math.floor(d/86400000)).padStart(2,'0');
+  document.getElementById('cdH').textContent = String(Math.floor(d%86400000/3600000)).padStart(2,'0');
+  document.getElementById('cdM').textContent = String(Math.floor(d%3600000/60000)).padStart(2,'0');
+  document.getElementById('cdS').textContent = String(Math.floor(d%60000/1000)).padStart(2,'0');
+}
+tick(); setInterval(tick, 1000);
+
+// ── MUSIC ──
+const songs = [{src:'https://res.cloudinary.com/dmcnpy20v/video/upload/v1774607271/CHROMATICS_GIRLS_JUST_WANNA_HAVE_SOME_clht9e.mp3',title:'Girls Just Want to Have Fun'}];
+const music = document.getElementById('bgMusic');
+const playBtn = document.getElementById('playBtn');
+const wave = document.getElementById('audioWave');
+const mpTitle = document.getElementById('mpTitle');
+const player = document.getElementById('music-player');
+let playing = false, cur = 0;
+function loadSong(i) { cur = i; music.src = songs[i].src; mpTitle.textContent = songs[i].title; }
+function selectSong(i) { loadSong(i); music.play().then(() => { playing=true;playBtn.textContent='⏸';wave.classList.remove('paused'); }).catch(()=>{}); }
+function toggleAudio() {
+  if (playing) { music.pause(); playing=false; playBtn.textContent='▶'; wave.classList.add('paused'); }
+  else { if (!music.src) loadSong(0); music.play().then(() => { playing=true;playBtn.textContent='⏸';wave.classList.remove('paused'); }).catch(()=>{}); }
+}
+function togglePlaylist() { const e=player.classList.contains('expanded'); player.classList.toggle('expanded',!e); player.classList.toggle('collapsed',e); }
+music.addEventListener('ended', () => selectSong((cur+1)%songs.length));
+loadSong(0);
+
+// ── SCROLL REVEAL ──
+const revEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i*50); io.unobserve(e.target); }
+  });
+}, {threshold: 0.08});
+revEls.forEach(r => io.observe(r));
+
+// ── PHOTO STRIP DRAG ──
+(function() {
+  const wrapper = document.getElementById('photoStripWrapper');
+  const strip = document.getElementById('photoStrip');
+  if (!wrapper || !strip) return;
+  const clone = strip.cloneNode(true);
+  wrapper.appendChild(clone);
+  let offset = 0, speed = 0.65, isDragging = false, startX = 0, startOffset = 0, raf = null, lastDragX = 0, dragVelocity = 0, isAutoPlaying = true;
+  function getSingleStripWidth() { return strip.offsetWidth + 12; }
+  function animate() {
+    if (!isDragging && isAutoPlaying) {
+      offset += speed;
+      const singleWidth = getSingleStripWidth();
+      if (offset >= singleWidth) offset -= singleWidth;
+      wrapper.scrollLeft = offset;
+    }
+    raf = requestAnimationFrame(animate);
+  }
+  function onDragStart(clientX) { isDragging = true; isAutoPlaying = false; startX = clientX; startOffset = wrapper.scrollLeft; lastDragX = clientX; dragVelocity = 0; }
+  function onDragMove(clientX) { if (!isDragging) return; const dx = clientX - startX; wrapper.scrollLeft = startOffset - dx; offset = wrapper.scrollLeft; dragVelocity = clientX - lastDragX; lastDragX = clientX; }
+  function onDragEnd() { if (!isDragging) return; isDragging = false; if (Math.abs(dragVelocity) > 1) { offset -= dragVelocity * 2; wrapper.scrollLeft = offset; } setTimeout(() => { isAutoPlaying = true; }, 500); }
+  wrapper.addEventListener('pointerdown', e => { if (e.pointerType === 'touch') return; onDragStart(e.clientX); wrapper.setPointerCapture(e.pointerId); e.preventDefault(); });
+  wrapper.addEventListener('pointermove', e => { if (e.pointerType === 'touch') return; onDragMove(e.clientX); });
+  wrapper.addEventListener('pointerup', e => { if (e.pointerType === 'touch') return; onDragEnd(); });
+  wrapper.addEventListener('pointercancel', e => { if (e.pointerType === 'touch') return; onDragEnd(); });
+  wrapper.addEventListener('touchstart', e => { onDragStart(e.touches[0].clientX); }, { passive: true });
+  wrapper.addEventListener('touchmove', e => { onDragMove(e.touches[0].clientX); }, { passive: true });
+  wrapper.addEventListener('touchend', () => onDragEnd(), { passive: true });
+  wrapper.addEventListener('touchcancel', () => onDragEnd(), { passive: true });
+  wrapper.addEventListener('dragstart', e => e.preventDefault());
+  animate();
+})();
+
+function toggleMob() { const m=document.getElementById('mobMenu'); m.style.display=m.style.display==='flex'?'none':'flex'; }
+
+// ── PER-CARD PHOTO CAROUSEL ──
+function cardCarousel(btn, dir) {
+  const carousel = btn.closest('.card-photo-carousel');
+  const slides = carousel.querySelector('.card-photo-slides');
+  const dots = carousel.querySelectorAll('.card-dot');
+  const total = dots.length;
+  let idx = parseInt(carousel.dataset.index) || 0;
+  idx = (idx + dir + total) % total;
+  carousel.dataset.index = idx;
+  slides.style.transform = `translateX(-${idx * (100 / total)}%)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+}
+
+// ── SCHEDULE SCROLL ──
+(function() {
+  const track = document.getElementById('scheduleTrack');
+  if (!track) return;
+  const cards = track.querySelectorAll('.timeline-card');
+  const dotsContainer = document.getElementById('schedDots');
+  const CARDS_PER_VIEW = Math.round(track.offsetWidth / 276) || 3;
+  const totalGroups = Math.ceil(cards.length / CARDS_PER_VIEW);
+  let currentGroup = 0;
+
+  // Build dots
+  for (let i = 0; i < totalGroups; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'sched-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => scrollToGroup(i));
+    dotsContainer.appendChild(dot);
+  }
+
+  function scrollToGroup(idx) {
+    currentGroup = Math.max(0, Math.min(idx, totalGroups - 1));
+    const cardWidth = cards[0].offsetWidth + 16;
+    track.scrollTo({ left: currentGroup * CARDS_PER_VIEW * cardWidth, behavior: 'smooth' });
+    document.querySelectorAll('.sched-dot').forEach((d, i) => d.classList.toggle('active', i === currentGroup));
+  }
+
+  window.schedScroll = function(dir) { scrollToGroup(currentGroup + dir); };
+
+  // Update dots on native scroll
+  track.addEventListener('scroll', () => {
+    const cardWidth = cards[0].offsetWidth + 16;
+    const idx = Math.round(track.scrollLeft / (CARDS_PER_VIEW * cardWidth));
+    if (idx !== currentGroup) {
+      currentGroup = Math.max(0, Math.min(idx, totalGroups - 1));
+      document.querySelectorAll('.sched-dot').forEach((d, i) => d.classList.toggle('active', i === currentGroup));
+    }
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
