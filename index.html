@@ -824,6 +824,460 @@ nav{
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 
+/* ════════════════════════════════════════
+════════════════════════════════════════ */
+.card-photo-single {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background: rgba(255,255,255,0.07);
+  border: 2px dashed rgba(255,255,255,0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.card-photo-single img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-photo-single .card-photo-placeholder {
+  font-size: 28px;
+  opacity: 0.35;
+}
+.card-photo-single .card-photo-label {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 7px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  font-weight: 600;
+}
+
+/* ════════════════════════════════════════
+   DRESS CODE COLUMNS
+════════════════════════════════════════ */
+.dress-columns {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 0 auto 32px;
+  max-width: 560px;
+}
+.dress-col {
+  flex: 1;
+  min-width: 160px;
+  text-align: center;
+}
+.dress-col-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.dress-col-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+.dress-sub-title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 6px;
+}
+.dress-list {
+  list-style: none;
+  padding: 0;
+}
+.dress-list li {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  color: var(--text-mid);
+  padding: 4px 0;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.dress-divider-v {
+  width: 1px;
+  background: rgba(244,143,177,0.3);
+  align-self: stretch;
+  min-height: 80px;
+}
+.dress-avoid {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(233,30,140,0.07);
+  border: 1px solid rgba(233,30,140,0.18);
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 500;
+  margin-top: 8px;
+}
+.dress-avoid-icon { font-size: 18px; }
+
+/* ════════════════════════════════════════
+   PROGRAM SECTION
+════════════════════════════════════════ */
+.program-section.section-card {
+  padding: 60px 40px;
+  text-align: center;
+}
+.program-timeline {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 0 10px;
+}
+.prog-item {
+  display: flex;
+  gap: 0;
+  align-items: flex-start;
+  position: relative;
+}
+.prog-time-col {
+  width: 90px;
+  flex-shrink: 0;
+  padding-top: 2px;
+  text-align: right;
+  padding-right: 20px;
+}
+.prog-time {
+  font-family: 'Special Elite', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--rose);
+  font-weight: 600;
+  line-height: 1.3;
+}
+.prog-dot-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 20px;
+}
+.prog-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--rose);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px rgba(240,98,146,0.3);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.prog-dot-last {
+  background: var(--pink-deep);
+  box-shadow: 0 0 0 3px rgba(233,30,140,0.25);
+}
+.prog-line {
+  width: 1px;
+  flex: 1;
+  min-height: 28px;
+  background: linear-gradient(to bottom, rgba(240,98,146,0.35), rgba(240,98,146,0.1));
+  margin: 4px 0;
+}
+.prog-content {
+  padding-left: 18px;
+  padding-bottom: 28px;
+  flex: 1;
+}
+.prog-item.last .prog-content {
+  padding-bottom: 0;
+}
+.prog-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+.prog-sub {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 12px;
+  color: var(--text-soft);
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+}
+@media(max-width:768px){
+  .program-section.section-card { padding: 40px 16px; }
+  .prog-time-col { width: 72px; padding-right: 14px; }
+  .prog-title { font-size: 17px; }
+  .prog-content { padding-left: 12px; padding-bottom: 22px; }
+}
+
+/* ════════════════════════════════════════
+   RSVP CONTACTS — ELEGANT REDESIGN
+════════════════════════════════════════ */
+/* ── Elegant RSVP layout ── */
+#rsvp.section-card { padding: 60px 40px; text-align: center; }
+
+.rsvp-elegant-wrap {
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.rsvp-deadline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, rgba(233,30,140,0.08), rgba(244,143,177,0.12));
+  border: 1px solid rgba(233,30,140,0.18);
+  border-radius: 60px;
+  padding: 14px 28px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+.rsvp-deadline-icon { font-size: 22px; flex-shrink: 0; }
+.rsvp-deadline-label {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.rsvp-deadline-date {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-style: italic;
+  color: var(--pink-deep);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.rsvp-note-elegant {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-style: italic;
+  color: var(--text-mid);
+  line-height: 1.9;
+  font-weight: 300;
+  margin-bottom: 36px;
+}
+
+.rsvp-contacts-elegant {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 32px;
+}
+.rsvp-elegant-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: rgba(255,255,255,0.8);
+  border: 1px solid rgba(244,143,177,0.22);
+  border-radius: 20px;
+  padding: 20px 28px;
+  cursor: default;
+  transition: box-shadow 0.3s, transform 0.3s;
+  text-align: left;
+  box-shadow: 0 2px 12px rgba(233,30,140,0.05);
+}
+.rsvp-elegant-card:hover {
+  box-shadow: 0 8px 28px rgba(233,30,140,0.14);
+  transform: translateY(-2px);
+}
+.rsvp-elegant-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink-light), var(--blush));
+  border: 1px solid rgba(244,143,177,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.rsvp-elegant-info { flex: 1; }
+.rsvp-elegant-method {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.rsvp-elegant-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--text);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+.rsvp-elegant-arrow {
+  color: rgba(240,98,146,0.4);
+  font-size: 18px;
+  font-weight: 300;
+  flex-shrink: 0;
+  transition: transform 0.3s, color 0.3s;
+}
+.rsvp-elegant-card:hover .rsvp-elegant-arrow {
+  transform: translateX(4px);
+  color: var(--rose);
+}
+
+.rsvp-elegant-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 14px;
+  color: var(--text-soft);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+}
+.rsvp-elegant-divider::before,
+.rsvp-elegant-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(244,143,177,0.25);
+}
+
+.rsvp-footer-note {
+  font-family: 'Special Elite', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--text-soft);
+  text-transform: uppercase;
+}
+
+@media(max-width:768px){
+  #rsvp.section-card { padding: 40px 16px; }
+  .rsvp-elegant-card { padding: 16px 18px; }
+  .rsvp-elegant-name { font-size: 19px; }
+  .rsvp-deadline-badge { padding: 12px 20px; }
+}
+
+/* ════════════════════════════════════════
+   ACTIVITIES SECTION
+════════════════════════════════════════ */
+.activities-section.section-card {
+  padding: 60px 40px;
+  text-align: center;
+}
+.activities-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.activity-item {
+  background: rgba(244,143,177,0.08);
+  border: 1px solid rgba(244,143,177,0.2);
+  border-radius: 20px;
+  padding: 28px 24px;
+  min-width: 150px;
+  flex: 1;
+  max-width: 200px;
+}
+.activity-icon { font-size: 36px; margin-bottom: 12px; }
+.activity-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  color: var(--text);
+  font-weight: 400;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.activity-time {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--rose);
+  font-weight: 600;
+}
+
+/* ════════════════════════════════════════
+   REMINDERS SECTION
+════════════════════════════════════════ */
+.reminders-section.section-card {
+  padding: 60px 40px;
+}
+.reminders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: 12px auto 32px;
+  text-align: left;
+}
+.reminder-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: rgba(244,143,177,0.07);
+  border: 1px solid rgba(244,143,177,0.18);
+  border-radius: 16px;
+  padding: 20px 24px;
+}
+.reminder-num {
+  font-family: 'Special Elite', monospace;
+  font-size: 22px;
+  color: var(--pink);
+  font-weight: bold;
+  flex-shrink: 0;
+  line-height: 1.3;
+  opacity: 0.7;
+}
+.reminder-text {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.7;
+  font-weight: 500;
+}
+.reminder-map {
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(233,30,140,0.12);
+}
+
+@media(max-width:768px) {
+  .dress-columns { gap: 20px; }
+  .dress-divider-v { display: none; }
+  .dress-col { min-width: 130px; }
+  .dress-avoid { font-size: 13px; padding: 10px 18px; text-align: center; }
+  .activities-section.section-card,
+  .reminders-section.section-card { padding: 32px 16px; }
+  .activities-grid { gap: 12px; }
+  .activity-item { padding: 20px 16px; max-width: 100%; }
+  .reminders-list { gap: 14px; }
+  .reminder-item { padding: 16px 18px; gap: 14px; }
+  .reminder-text { font-size: 14px; }
+  .rsvp-contact-row { padding: 14px 18px; }
+  .rsvp-contact-value { font-size: 18px; }
+}
+
+
 /* Cloud details card */
 .cloud-details-card {
   position: relative;
@@ -1117,8 +1571,8 @@ nav{
 }
 .timeline-card-time {
   font-family: 'Special Elite', monospace;
-  font-size: 9px;
-  letter-spacing: 3px;
+  font-size: 11px;
+  letter-spacing: 2px;
   color: var(--pink);
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -1133,16 +1587,16 @@ nav{
 }
 .timeline-card h4 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.92);
+  font-size: 20px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.95);
   margin-bottom: 8px;
   font-style: italic;
   line-height: 1.3;
 }
 .timeline-card p {
-  font-size: 10px;
-  color: rgba(255,255,255,0.45);
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
   line-height: 1.6;
   letter-spacing: 0.3px;
 }
@@ -1379,17 +1833,20 @@ nav{
   <ul class="nav-links">
     <li><a href="#collage">Gallery</a></li>
     <li><a href="#schedule">Programme</a></li>
+    <li><a href="#activities">Program</a></li>
     <li><a href="#dresscode">Dress Code</a></li>
     <li><a href="#rsvp">RSVP</a></li>
+    <li><a href="#reminders">Reminders</a></li>
   </ul>
   <button class="hamburger" onclick="toggleMob()"><span></span><span></span><span></span></button>
 </nav>
 <div class="mob-menu" id="mobMenu">
   <a href="#collage" onclick="toggleMob()">Gallery</a>
-  <a href="#eighteens" onclick="toggleMob()">The 18s</a>
   <a href="#schedule" onclick="toggleMob()">Programme</a>
+  <a href="#activities" onclick="toggleMob()">Program</a>
   <a href="#dresscode" onclick="toggleMob()">Dress Code</a>
   <a href="#rsvp" onclick="toggleMob()">RSVP</a>
+  <a href="#reminders" onclick="toggleMob()">Reminders</a>
 </div>
 
 <!-- HERO -->
@@ -1535,14 +1992,14 @@ nav{
     <div class="divider"><div class="divider-heart">✈</div></div>
     <div class="strip-wrapper" id="photoStripWrapper">
       <div class="photo-strip" id="photoStrip">
-        <div class="strip-frame portrait"><img src="44.jpg" alt="Portrait 1" draggable="false">
-        <div class="strip-frame portrait"><img src="444.jpg" alt="Landscape 1" draggable="false">
-        <div class="strip-frame portrait"><img src="4444.jpg" alt="Portrait 2" draggable="false">
-        <div class="strip-frame portrait"><img src="44444.jpg" alt="Landscape 2" draggable="false">
-        <div class="strip-frame portrait"><img src="5.jpg" alt="Portrait 3" draggable="false">
-        <div class="strip-frame landscape"><img src="55.jpg" alt="Landscape 3" draggable="false">
-        <div class="strip-frame portrait"><img src="555.jpg" alt="Portrait 4" draggable="false">
-        <div class="strip-frame landscape"><img src="5555.png" alt="Landscape 4" draggable="false">
+        <div class="strip-frame portrait"><img src="44.jpg" alt="Portrait 1" draggable="false"><div class="strip-caption">✈</div></div>
+        <div class="strip-frame portrait"><img src="444.jpg" alt="Portrait 2" draggable="false"><div class="strip-caption">✈</div></div>
+        <div class="strip-frame portrait"><img src="4444.jpg" alt="Portrait 3" draggable="false"><div class="strip-caption">✈</div></div>
+        <div class="strip-frame portrait"><img src="44444.jpg" alt="Portrait 4" draggable="false"><div class="strip-caption">✈</div></div>
+        <div class="strip-frame portrait"><img src="5.jpg" alt="Portrait 5" draggable="false"><div class="strip-caption">✈</div></div>
+        <div class="strip-frame landscape"><img src="55.jpg" alt="Landscape 1" draggable="false"><div class="strip-caption">✈</div></div>
+        <div class="strip-frame portrait"><img src="555.jpg" alt="Portrait 6" draggable="false"><div class="strip-caption">✈</div></div>
+        <div class="strip-frame landscape"><img src="5555.png" alt="Landscape 2" draggable="false"><div class="strip-caption">✈</div></div>
       </div>
     </div>
   </div>
@@ -1552,7 +2009,7 @@ nav{
 <div class="schedule-section section-card reveal" id="schedule">
   <div style="max-width:900px;margin:0 auto;position:relative;z-index:1;padding:0 30px 10px;">
     <p class="section-label">Evening Programme</p>
-    <h2 class="section-title">Schedule of Activities</h2>
+    <h2 class="section-title">Programme of Events</h2>
     <div class="divider"><div class="divider-heart">✈</div></div>
   </div>
 
@@ -1561,171 +2018,83 @@ nav{
       <div class="timeline-scrollable" id="scheduleTrack">
         <!-- Card 1 -->
         <div class="timeline-card">
-          <div class="card-photo-carousel" data-index="0">
-            <div class="card-photo-slides">
-              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
-            </div>
-            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
-            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
-            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          <div class="card-photo-single">
+            <div class="card-photo-placeholder">🌸</div>
+            <div class="card-photo-label">Event Photo</div>
           </div>
-          <div class="timeline-card-time">5:30 PM</div><h4>Guest Arrival & Reception</h4><p>Welcome drinks and cocktail hour in the foyer</p>
+          <div class="timeline-card-time">6:00 – 7:00 PM</div><h4>Cocktail Hour</h4><p>Grazing table &amp; welcome reception for guests</p>
         </div>
         <!-- Card 2 -->
         <div class="timeline-card">
-          <div class="card-photo-carousel" data-index="0">
-            <div class="card-photo-slides">
-              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
-            </div>
-            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
-            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
-            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          <div class="card-photo-single">
+            <div class="card-photo-placeholder">✈</div>
+            <div class="card-photo-label">Event Photo</div>
           </div>
-          <div class="timeline-card-time">6:00 PM</div><h4>Grand Entrance of the Debutante</h4><p>The night begins as Amanda makes her entrance</p>
+          <div class="timeline-card-time">7:00 PM</div><h4>Grand Entrance</h4><p>Amanda makes her grand debut entrance into the ballroom</p>
         </div>
         <!-- Card 3 -->
         <div class="timeline-card">
-          <div class="card-photo-carousel" data-index="0">
-            <div class="card-photo-slides">
-              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
-            </div>
-            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
-            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
-            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          <div class="card-photo-single">
+            <div class="card-photo-placeholder">🌹</div>
+            <div class="card-photo-label">Event Photo</div>
           </div>
-          <div class="timeline-card-time">6:15 PM</div><h4>Opening Prayer & Welcome Remarks</h4><p>A moment of gratitude and love</p>
+          <div class="timeline-card-time">7:00 PM</div><h4>18 Roses Ceremony</h4><p>Eighteen gentlemen present a rose to the debutante</p>
         </div>
         <!-- Card 4 -->
         <div class="timeline-card">
-          <div class="card-photo-carousel" data-index="0">
-            <div class="card-photo-slides">
-              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
-            </div>
-            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
-            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
-            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          <div class="card-photo-single">
+            <div class="card-photo-placeholder">📸</div>
+            <div class="card-photo-label">Event Photo</div>
           </div>
-          <div class="timeline-card-time">6:30 PM</div><h4>18 Roses Ceremony</h4><p>Gentlemen who have shaped her life present a rose</p>
+          <div class="timeline-card-time">After 18 Roses</div><h4>Picture Taking</h4><p>Photo opportunities with the debutante and her family</p>
         </div>
         <!-- Card 5 -->
         <div class="timeline-card">
-          <div class="card-photo-carousel" data-index="0">
-            <div class="card-photo-slides">
-              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
-            </div>
-            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
-            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
-            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          <div class="card-photo-single">
+            <div class="card-photo-placeholder">🍽️</div>
+            <div class="card-photo-label">Event Photo</div>
           </div>
-          <div class="timeline-card-time">7:00 PM</div><h4>18 Candles Ceremony</h4><p>Ladies light a candle and share their wishes</p>
+          <div class="timeline-card-time">7:30 PM</div><h4>Dinner</h4><p>A celebratory feast shared with loved ones</p>
         </div>
         <!-- Card 6 -->
         <div class="timeline-card">
-          <div class="card-photo-carousel" data-index="0">
-            <div class="card-photo-slides">
-              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
-            </div>
-            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
-            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
-            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          <div class="card-photo-single">
+            <div class="card-photo-placeholder">🕯️</div>
+            <div class="card-photo-label">Event Photo</div>
           </div>
-          <div class="timeline-card-time">7:30 PM</div><h4>18 Bags Ceremony</h4><p>Gifts of love and life lessons presented</p>
+          <div class="timeline-card-time">8:30 PM</div><h4>18 Candles Ceremony</h4><p>Ladies light a candle and share their heartfelt wishes</p>
         </div>
         <!-- Card 7 -->
         <div class="timeline-card">
-          <div class="card-photo-carousel" data-index="0">
-            <div class="card-photo-slides">
-              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
-            </div>
-            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
-            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
-            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          <div class="card-photo-single">
+            <div class="card-photo-placeholder">🎂</div>
+            <div class="card-photo-label">Event Photo</div>
           </div>
-          <div class="timeline-card-time">8:00 PM</div><h4>18 Blue Bills Ceremony</h4><p>Bestowing abundance and prosperity</p>
+          <div class="timeline-card-time">After 18 Candles</div><h4>Blowing Out the Candles</h4><p>Amanda makes her birthday wish over a beautiful cake</p>
         </div>
         <!-- Card 8 -->
         <div class="timeline-card">
-          <div class="card-photo-carousel" data-index="0">
-            <div class="card-photo-slides">
-              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
-            </div>
-            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
-            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
-            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          <div class="card-photo-single">
+            <div class="card-photo-placeholder">🥂</div>
+            <div class="card-photo-label">Event Photo</div>
           </div>
-          <div class="timeline-card-time">8:30 PM</div><h4>18 Wishes</h4><p>Heartfelt words from those who love her most</p>
+          <div class="timeline-card-time">9:45 PM</div><h4>Toasts</h4><p>Heartfelt messages and toasts from those who love her most</p>
         </div>
         <!-- Card 9 -->
         <div class="timeline-card">
-          <div class="card-photo-carousel" data-index="0">
-            <div class="card-photo-slides">
-              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
-            </div>
-            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
-            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
-            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          <div class="card-photo-single">
+            <div class="card-photo-placeholder">💬</div>
+            <div class="card-photo-label">Event Photo</div>
           </div>
-          <div class="timeline-card-time">9:00 PM</div><h4>Formal Dinner</h4><p>A feast shared in celebration</p>
+          <div class="timeline-card-time">10:25 PM</div><h4>Debutante's Speech</h4><p>Amanda shares her message of gratitude and love</p>
         </div>
         <!-- Card 10 -->
         <div class="timeline-card">
-          <div class="card-photo-carousel" data-index="0">
-            <div class="card-photo-slides">
-              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
-            </div>
-            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
-            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
-            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
+          <div class="card-photo-single">
+            <div class="card-photo-placeholder">🎁</div>
+            <div class="card-photo-label">Event Photo</div>
           </div>
-          <div class="timeline-card-time">10:00 PM</div><h4>Cotillion de Honor</h4><p>The elegant debut waltz performance</p>
-        </div>
-        <!-- Card 11 -->
-        <div class="timeline-card">
-          <div class="card-photo-carousel" data-index="0">
-            <div class="card-photo-slides">
-              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
-            </div>
-            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
-            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
-            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
-          </div>
-          <div class="timeline-card-time">10:30 PM</div><h4>Open Floor — Dancing & Celebration</h4><p>The night is young — dance, laugh, celebrate!</p>
-        </div>
-        <!-- Card 12 -->
-        <div class="timeline-card">
-          <div class="card-photo-carousel" data-index="0">
-            <div class="card-photo-slides">
-              <div class="card-photo-slide active"><div class="card-photo-placeholder">🌸</div><div class="card-photo-label">Event Photo 1</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">✨</div><div class="card-photo-label">Event Photo 2</div></div>
-              <div class="card-photo-slide"><div class="card-photo-placeholder">🎀</div><div class="card-photo-label">Event Photo 3</div></div>
-            </div>
-            <button class="card-photo-btn prev" onclick="cardCarousel(this,-1)">&#8592;</button>
-            <button class="card-photo-btn next" onclick="cardCarousel(this,1)">&#8594;</button>
-            <div class="card-photo-dots"><span class="card-dot active"></span><span class="card-dot"></span><span class="card-dot"></span></div>
-          </div>
-          <div class="timeline-card-time">12:00 AM</div><h4>Farewell & Photo Opportunity</h4><p>End the night with one last memory</p>
+          <div class="timeline-card-time">10:30 PM</div><h4>Distribution of Souvenirs</h4><p>Take home a keepsake from this magical evening</p>
         </div>
       </div>
     </div>
@@ -1743,18 +2112,39 @@ nav{
   <p class="section-label">Dress Code</p>
   <h2 class="section-title">What to Wear</h2>
   <div class="divider"><div class="divider-heart">✈</div></div>
-  <p style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--text);font-style:italic;font-weight:300;margin-bottom:6px;">Black Tie Optional</p>
-  <p style="font-family:'Quicksand',sans-serif;font-size:8px;letter-spacing:3px;color:var(--text-soft);text-transform:uppercase;font-weight:600;">Motif Colours for Guests</p>
-  <div class="dress-swatches">
-    <div class="swatch"><div class="swatch-circle" style="background:#F48FB1;"></div><div class="swatch-label">Soft Pink</div></div>
-    <div class="swatch"><div class="swatch-circle" style="background:#FCE4EC;"></div><div class="swatch-label">Blush</div></div>
-    <div class="swatch"><div class="swatch-circle" style="background:#F8BBD9;"></div><div class="swatch-label">Rose Mist</div></div>
-    <div class="swatch"><div class="swatch-circle" style="background:#E91E8C;"></div><div class="swatch-label">Deep Rose</div></div>
-    <div class="swatch"><div class="swatch-circle" style="background:#FFF0F5;"></div><div class="swatch-label">Ivory Pink</div></div>
+  <p style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--text);font-style:italic;font-weight:300;margin-bottom:32px;">Semi-Formal or Formal Attire</p>
+
+  <div class="dress-columns">
+    <div class="dress-col">
+      <div class="dress-col-icon">👔</div>
+      <div class="dress-col-title">Gentlemen</div>
+      <ul class="dress-list">
+        <li>Suit or Blazer</li>
+        <li>Long Sleeve Polo</li>
+        <li>Trousers or Slacks</li>
+      </ul>
+    </div>
+    <div class="dress-divider-v"></div>
+    <div class="dress-col">
+      <div class="dress-col-icon">👗</div>
+      <div class="dress-col-title">Ladies</div>
+      <div class="dress-sub-title">Semi-Formal</div>
+      <ul class="dress-list">
+        <li>Cocktail Dress</li>
+        <li>Classy Blouse &amp; Trousers</li>
+      </ul>
+      <div class="dress-sub-title" style="margin-top:14px;">Formal</div>
+      <ul class="dress-list">
+        <li>Long Dress</li>
+        <li>Evening Gown</li>
+      </ul>
+    </div>
   </div>
-  <p class="dress-note">
-    Wear your prettiest shades of pink — because tonight, every guest becomes part of Amanda's most beautiful chapter yet.
-  </p>
+
+  <div class="dress-avoid">
+    <span class="dress-avoid-icon">🚫</span>
+    <span>Please avoid wearing <strong>pink</strong> and <strong>black</strong></span>
+  </div>
 </div>
 
 <!-- RSVP -->
@@ -1762,11 +2152,167 @@ nav{
   <p class="section-label">Join the Journey</p>
   <h2 class="section-title">RSVP</h2>
   <div class="divider"><div class="divider-heart">✈</div></div>
-  <p class="rsvp-note">Please confirm your attendance by <strong>May 20, 2025</strong>.<br>We cannot wait to celebrate this beautiful new chapter with you.</p>
-  <a href="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform" target="_blank" class="gform-btn">
-    Confirm Attendance
-  </a>
+
+  <div class="rsvp-elegant-wrap">
+    <div class="rsvp-deadline-badge">
+      <span class="rsvp-deadline-icon">🗓️</span>
+      <div>
+        <div class="rsvp-deadline-label">Kindly reply by</div>
+        <div class="rsvp-deadline-date">May 1, 2026</div>
+      </div>
+    </div>
+
+    <p class="rsvp-note-elegant">We would be honored to share this milestone with you.<br>Please reach out to confirm your seat at the table.</p>
+
+    <div class="rsvp-contacts-elegant">
+      <div class="rsvp-elegant-card">
+        <div class="rsvp-elegant-icon-wrap">
+          <span class="rsvp-elegant-icon">💬</span>
+        </div>
+        <div class="rsvp-elegant-info">
+          <div class="rsvp-elegant-method">Messenger</div>
+          <div class="rsvp-elegant-name">Amanda Pritzie</div>
+        </div>
+        <div class="rsvp-elegant-arrow">→</div>
+      </div>
+
+      <div class="rsvp-elegant-divider"><span>or</span></div>
+
+      <div class="rsvp-elegant-card">
+        <div class="rsvp-elegant-icon-wrap">
+          <span class="rsvp-elegant-icon">📱</span>
+        </div>
+        <div class="rsvp-elegant-info">
+          <div class="rsvp-elegant-method">Mobile</div>
+          <div class="rsvp-elegant-name">09292411188</div>
+        </div>
+        <div class="rsvp-elegant-arrow">→</div>
+      </div>
+    </div>
+
+    <div class="rsvp-footer-note">✈ &nbsp; We look forward to celebrating with you &nbsp; ✈</div>
+  </div>
 </section>
+
+<!-- PROGRAM -->
+<div class="program-section section-card reveal" id="activities">
+  <p class="section-label">Evening Flow</p>
+  <h2 class="section-title">Program</h2>
+  <div class="divider"><div class="divider-heart">✈</div></div>
+  <div class="program-timeline">
+
+    <div class="prog-item">
+      <div class="prog-time-col">
+        <div class="prog-time">6 – 7 PM</div>
+      </div>
+      <div class="prog-dot-col"><div class="prog-dot"></div><div class="prog-line"></div></div>
+      <div class="prog-content">
+        <div class="prog-title">Cocktail Hour</div>
+        <div class="prog-sub">Grazing Table</div>
+        <div class="prog-sub">Activities / Games</div>
+      </div>
+    </div>
+
+    <div class="prog-item">
+      <div class="prog-time-col">
+        <div class="prog-time">7 PM</div>
+      </div>
+      <div class="prog-dot-col"><div class="prog-dot"></div><div class="prog-line"></div></div>
+      <div class="prog-content">
+        <div class="prog-title">Grand Entrance</div>
+        <div class="prog-sub">18 Roses</div>
+        <div class="prog-sub">Picture Taking</div>
+      </div>
+    </div>
+
+    <div class="prog-item">
+      <div class="prog-time-col">
+        <div class="prog-time">7:30 PM</div>
+      </div>
+      <div class="prog-dot-col"><div class="prog-dot"></div><div class="prog-line"></div></div>
+      <div class="prog-content">
+        <div class="prog-title">Dinner</div>
+        <div class="prog-sub">Activities / Games</div>
+      </div>
+    </div>
+
+    <div class="prog-item">
+      <div class="prog-time-col">
+        <div class="prog-time">8:30 PM</div>
+      </div>
+      <div class="prog-dot-col"><div class="prog-dot"></div><div class="prog-line"></div></div>
+      <div class="prog-content">
+        <div class="prog-title">18 Candles</div>
+        <div class="prog-sub">Blowing Out Cake Candles</div>
+      </div>
+    </div>
+
+    <div class="prog-item">
+      <div class="prog-time-col">
+        <div class="prog-time">9:15 PM</div>
+      </div>
+      <div class="prog-dot-col"><div class="prog-dot"></div><div class="prog-line"></div></div>
+      <div class="prog-content">
+        <div class="prog-title">Games / Activities</div>
+      </div>
+    </div>
+
+    <div class="prog-item">
+      <div class="prog-time-col">
+        <div class="prog-time">9:45 PM</div>
+      </div>
+      <div class="prog-dot-col"><div class="prog-dot"></div><div class="prog-line"></div></div>
+      <div class="prog-content">
+        <div class="prog-title">Toasts</div>
+      </div>
+    </div>
+
+    <div class="prog-item">
+      <div class="prog-time-col">
+        <div class="prog-time">10:25 PM</div>
+      </div>
+      <div class="prog-dot-col"><div class="prog-dot"></div><div class="prog-line"></div></div>
+      <div class="prog-content">
+        <div class="prog-title">Debutant's Speech</div>
+      </div>
+    </div>
+
+    <div class="prog-item last">
+      <div class="prog-time-col">
+        <div class="prog-time">10:30 PM</div>
+      </div>
+      <div class="prog-dot-col"><div class="prog-dot prog-dot-last"></div></div>
+      <div class="prog-content">
+        <div class="prog-title">Distribution of Souvenirs</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- REMINDERS -->
+<div class="reminders-section section-card reveal" id="reminders">
+  <p class="section-label">Before You Come</p>
+  <h2 class="section-title">Reminders</h2>
+  <div class="divider"><div class="divider-heart">✈</div></div>
+  <div class="reminders-list">
+    <div class="reminder-item">
+      <div class="reminder-num">01</div>
+      <div class="reminder-text">This will be an <strong>adults-only</strong> celebration. We respectfully request no children at the event.</div>
+    </div>
+    <div class="reminder-item">
+      <div class="reminder-num">02</div>
+      <div class="reminder-text">Parking is available at the venue or at <strong>SM San Lazaro</strong> nearby.</div>
+    </div>
+    <div class="reminder-item">
+      <div class="reminder-num">03</div>
+      <div class="reminder-text"><strong>Venue Directions</strong> — Winford Resort and Casino Manila:</div>
+    </div>
+  </div>
+  <div class="reminder-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.6757527518994!2d120.98481100959432!3d14.617537976605005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b5fd636fd041%3A0x3684f05d82fff018!2sWinford%20Resort%20and%20Casino%20Manila!5e0!3m2!1sen!2sph!4v1776433063056!5m2!1sen!2sph" width="100%" height="320" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
 
 </div><!-- end .cards-wrapper -->
 
@@ -1785,8 +2331,8 @@ nav{
 
 <!-- RSVP BAR -->
 <div class="rsvp-bar">
-  <p>Kindly RSVP by May 20, 2025</p>
-  <button class="rsvp-btn" onclick="alert('Please contact us at +63 900 000 0000')">Confirm Attendance</button>
+  <p>Kindly RSVP by May 1, 2026</p>
+  <button class="rsvp-btn" onclick="document.getElementById('rsvp').scrollIntoView({behavior:'smooth'})">RSVP Now</button>
 </div>
 
 <script>
