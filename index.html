@@ -2249,6 +2249,62 @@ nav{
   background: rgba(211,47,47,0.04);
 }
 
+.pi-stamp-tallinn {
+  border: 2.5px solid #444;
+  color: #444;
+  transform: rotate(-4deg);
+  background: rgba(0,0,0,0.02);
+  padding: 7px 10px;
+  min-width: 90px;
+}
+.pi-stamp-tallinn .pi-stamp-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2px;
+}
+.pi-stamp-tallinn .est-stars {
+  font-size: 7px;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+  text-align: left;
+}
+.pi-stamp-tallinn .est-plane {
+  font-size: 14px;
+  border: 1.5px solid #444;
+  padding: 1px 3px;
+  border-radius: 2px;
+}
+.pi-stamp-tallinn .est-date {
+  font-size: 11px;
+  color: #CC0000;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  margin: 3px 0 2px;
+}
+.pi-stamp-tallinn .est-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 4px;
+}
+.pi-stamp-tallinn .est-arrow {
+  font-size: 14px;
+  border: 1.5px solid #444;
+  padding: 1px 3px;
+  border-radius: 2px;
+  line-height: 1;
+}
+.pi-stamp-tallinn .est-city {
+  text-align: right;
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
 /* ── Data page ── */
 .pi-data-page {
   padding: 20px 24px 16px;
@@ -2570,6 +2626,17 @@ nav{
           <div class="pi-stamp-date">07/05/98</div>
         </div>
       </div>
+      <div class="pi-stamp pi-stamp-tallinn">
+        <div class="pi-stamp-top-row">
+          <div class="est-stars">★★★<br>EST<br>★★★</div>
+          <div class="est-plane">✈</div>
+        </div>
+        <div class="est-date">14.09.24 &nbsp;05</div>
+        <div class="est-bottom-row">
+          <div class="est-arrow">←</div>
+          <div class="est-city">TALLINN<br>L 572</div>
+        </div>
+      </div>
     </div>
 
     <!-- Passport data page -->
@@ -2598,7 +2665,7 @@ nav{
       <div class="pi-main-data">
         <div class="pi-photo-col">
           <div class="pi-photo-frame">
-            <img src="1000022615.jpg" alt="Amanda Pritzie" class="pi-photo">
+            <img src="pic.jpg" alt="Amanda Pritzie" class="pi-photo">
           </div>
         </div>
         <div class="pi-fields-col">
