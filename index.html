@@ -3330,43 +3330,45 @@ nav{
   updateNightSkyOpacity();
 })();
 
-// ── PASSPORT & ENTER ──
-document.body.style.overflow='hidden';
-function generateBarcode(containerId, barClass) {
-  const el = document.getElementById(containerId);
-  if (!el) return;
-  const widths = [2,1,3,1,2,1,1,3,2,1,2,3,1,1,2,1,3,2,1,1,3,1,2,1,3,2,1,1,2,3,1,2];
-  const heights = [44,32,44,28,44,32,36,44,28,44,32,44,24,44,32,44,28,44,32,36,44,24,44,32,44,28,44,36,44,32,28,44];
-  const cls = barClass || (containerId.includes('inline') ? 'ibp-stub-bar' : 'bp-bar');
-  widths.forEach((w, i) => {
-    const bar = document.createElement('div');
-    bar.className = cls;
-    bar.style.width = w + 'px';
-    bar.style.height = Math.round(heights[i] * 0.75) + 'px';
-    el.appendChild(bar);
-  });
-}
-generateBarcode('inline-barcode', 'ibp-stub-bar');
-
 function openPassportAndEnter() {
   const passportWrap = document.getElementById('ph-passport-wrap');
   const overlay = document.getElementById('boarding-overlay');
   const btnWrap = document.getElementById('enter-btn-wrap');
+  
   btnWrap.style.opacity = '0';
   btnWrap.style.pointerEvents = 'none';
   passportWrap.classList.add('is-open');
+
+  // 🎵 PLAY MUSIC FIX
+  if (!playing) {
+    // If there is no source attached to the audio element yet, load it
+    if (!music.src || music.src === window.location.href) {
+      loadSong(0);
+      music.load(); // Force the browser to load the new source immediately
+    }
+    
+    // Attempt to play and catch any specific errors
+    const playPromise = music.play();
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        playing = true;
+        if (playBtn) playBtn.textContent = '⏸';
+        if (wave) wave.classList.remove('paused');
+        console.log("Music started playing successfully!");
+      }).catch(err => {
+        console.error("Music playback failed. Reason:", err);
+      });
+    }
+  }
+
+  // ⏳ DELAY THE VISUAL OVERLAY EXIT
   setTimeout(() => {
     overlay.classList.add('exit');
     document.body.style.overflow = 'auto';
     document.body.style.overflowX = 'hidden';
     setTimeout(() => { overlay.style.display = 'none'; }, 1000);
-    if (!playing) {
-      if (!music.src || music.src === window.location.href) loadSong(0);
-      music.play().then(() => { playing=true; playBtn.textContent='⏸'; wave.classList.remove('paused'); }).catch(()=>{});
-    }
   }, 4000);
 }
-
 // ── COUNTDOWN ──
 const debut = new Date('2026-05-16T18:00:00+08:00');
 function tick() {
@@ -3387,7 +3389,7 @@ function tick() {
 tick(); setInterval(tick, 1000);
 
 // ── MUSIC ──
-const songs = [{src:'https://res.cloudinary.com/dmcnpy20v/video/upload/v1774607271/CHROMATICS_GIRLS_JUST_WANNA_HAVE_SOME_clht9e.mp3',title:'Girls Just Want to Have Fun'}];
+const songs = [{src:'https://res.cloudinary.com/dmcnpy20v/video/upload/v1776507526/One_Direction_-_Girl_Almighty_Audio_gdve68.mp3',title:'Girl Almighty - One Direction'}];
 const music = document.getElementById('bgMusic');
 const playBtn = document.getElementById('playBtn');
 const wave = document.getElementById('audioWave');
