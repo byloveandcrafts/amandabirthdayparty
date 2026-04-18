@@ -2141,6 +2141,249 @@ nav{
   .footer-section { padding: 60px 20px 100px !important; } /* Added bottom padding so the fixed RSVP bar doesn't cover text */
   .rsvp-bar { flex-direction: column; gap: 8px; padding: 12px 16px; }
 }
+
+/* ════════════════════════════════════════
+   PASSPORT INFO SECTION
+════════════════════════════════════════ */
+.passport-info-section {
+  padding: 0 20px 60px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+}
+
+.passport-info-card {
+  width: min(680px, 100%);
+  background: #f8f5ef;
+  border-radius: 8px;
+  box-shadow: 0 12px 50px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  font-family: 'Special Elite', monospace;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* ── Stamp row ── */
+.pi-stamps-row {
+  background: #fff;
+  padding: 16px 18px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid #e8e0d0;
+}
+
+.pi-stamp {
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: 'Special Elite', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  transform-origin: center;
+}
+
+.pi-stamp-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+}
+
+.pi-stamp-text {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  line-height: 1.2;
+}
+
+.pi-stamp-date {
+  font-size: 9px;
+  letter-spacing: 1px;
+  opacity: 0.85;
+}
+
+.pi-stamp-maple { font-size: 18px; }
+.pi-stamp-eagle { font-size: 16px; }
+
+.pi-stamp-canada {
+  border: 2.5px solid #D32F2F;
+  color: #D32F2F;
+  transform: rotate(-6deg);
+  background: rgba(211,47,47,0.04);
+}
+
+.pi-stamp-nyc {
+  border: 2.5px solid #1565C0;
+  color: #1565C0;
+  transform: rotate(4deg);
+  background: rgba(21,101,192,0.04);
+  padding: 10px 14px;
+}
+
+.pi-stamp-london {
+  border: 2px solid #555;
+  color: #444;
+  transform: rotate(-2deg);
+  background: rgba(0,0,0,0.02);
+  font-size: 8px;
+}
+
+.pi-stamp-de {
+  border: 2.5px solid #D32F2F;
+  color: #D32F2F;
+  transform: rotate(5deg);
+  background: rgba(211,47,47,0.04);
+}
+
+/* ── Data page ── */
+.pi-data-page {
+  padding: 20px 24px 16px;
+  background: #f8f5ef;
+}
+
+.pi-republic-header {
+  font-family: 'Special Elite', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #333;
+  margin-bottom: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.pi-italic { font-style: italic; opacity: 0.6; }
+
+.pi-divider-line {
+  height: 1.5px;
+  background: #c8b89a;
+  margin-bottom: 12px;
+}
+
+/* Meta row: occasion / date / time */
+.pi-meta-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.pi-meta-field {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.pi-meta-label {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: #777;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.pi-meta-value {
+  font-family: 'Special Elite', monospace;
+  font-size: 11px;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Main data: photo + fields + flag */
+.pi-main-data {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.pi-photo-col { flex-shrink: 0; }
+
+.pi-photo-frame {
+  width: 110px;
+  height: 130px;
+  border: 2px solid #bbb;
+  overflow: hidden;
+  background: #eee;
+  flex-shrink: 0;
+}
+
+.pi-photo { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+.pi-fields-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pi-field-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pi-field-label {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: #777;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.pi-field-value {
+  font-family: 'Special Elite', monospace;
+  font-size: 14px;
+  color: #111;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  font-weight: bold;
+}
+
+.pi-flag-thumb {
+  flex-shrink: 0;
+  align-self: flex-end;
+  opacity: 0.75;
+}
+
+/* MRZ strip */
+.pi-mrz-strip {
+  background: #e8e0d0;
+  border-top: 1px solid #c8b89a;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.pi-mrz-text {
+  font-family: 'Special Elite', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #333;
+  word-break: break-all;
+  line-height: 1.4;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .passport-info-section { padding: 0 12px 40px; }
+  .pi-data-page { padding: 14px 14px 12px; }
+  .pi-stamps-row { padding: 10px 10px 8px; gap: 8px; }
+  .pi-stamp { min-width: 60px; padding: 6px 8px; }
+  .pi-stamp-text { font-size: 9px; }
+  .pi-main-data { gap: 12px; }
+  .pi-photo-frame { width: 82px; height: 100px; }
+  .pi-field-value { font-size: 12px; }
+  .pi-flag-thumb { display: none; }
+  .pi-meta-row { gap: 12px; }
+}
 </style>
 </head>
 <body>
@@ -2281,6 +2524,118 @@ nav{
     </div>
   </div>
 </section>
+
+<!-- PASSPORT INFO SECTION -->
+<div class="passport-info-section reveal">
+  <div class="passport-info-card">
+
+    <!-- Stamp collage top -->
+    <div class="pi-stamps-row">
+      <div class="pi-stamp pi-stamp-canada">
+        <div class="pi-stamp-inner">
+          <div class="pi-stamp-maple">🍁</div>
+          <div class="pi-stamp-text">CANADA</div>
+          <div class="pi-stamp-date">FEB 07</div>
+        </div>
+      </div>
+      <div class="pi-stamp pi-stamp-nyc">
+        <div class="pi-stamp-inner">
+          <div class="pi-stamp-text" style="font-size:10px;">WELCOME TO</div>
+          <div class="pi-stamp-text" style="font-size:20px;letter-spacing:2px;">NYC</div>
+          <div class="pi-stamp-text" style="font-size:7px;letter-spacing:1px;">PORT AUTHORITY</div>
+          <div class="pi-stamp-date" style="font-size:7px;">APR 12 1998</div>
+        </div>
+      </div>
+      <div class="pi-stamp pi-stamp-london">
+        <div class="pi-stamp-inner">
+          <div class="pi-stamp-text" style="font-size:8px; letter-spacing:1px;">IMMIGRATION OFFICER</div>
+          <div class="pi-stamp-text" style="font-size:8px;">(2748)</div>
+          <div class="pi-stamp-date">27 DEC 2006</div>
+          <div class="pi-stamp-text" style="font-size:8px;">LONDON. UK</div>
+        </div>
+      </div>
+      <div class="pi-stamp pi-stamp-de">
+        <div class="pi-stamp-inner">
+          <div class="pi-stamp-text" style="font-size:11px;letter-spacing:2px;">DEUTSCHLAND</div>
+          <div class="pi-stamp-eagle">🦅</div>
+          <div class="pi-stamp-date">07/05/98</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Passport data page -->
+    <div class="pi-data-page">
+      <div class="pi-republic-header">
+        <span>REPUBLIC OF THE PHILIPPINES</span>
+        <span class="pi-italic">/ REPUBLIC OF THE PHILIPPINES</span>
+      </div>
+      <div class="pi-divider-line"></div>
+
+      <div class="pi-meta-row">
+        <div class="pi-meta-field">
+          <span class="pi-meta-label">OCCASION <span class="pi-italic">/ OKASYON</span></span>
+          <span class="pi-meta-value">CIVIL WEDDING</span>
+        </div>
+        <div class="pi-meta-field">
+          <span class="pi-meta-label">DATE <span class="pi-italic">/ PETSA</span></span>
+          <span class="pi-meta-value">MAY 16, 2026</span>
+        </div>
+        <div class="pi-meta-field">
+          <span class="pi-meta-label">TIME <span class="pi-italic">/ ORAS</span></span>
+          <span class="pi-meta-value">6:00PM</span>
+        </div>
+      </div>
+
+      <div class="pi-main-data">
+        <div class="pi-photo-col">
+          <div class="pi-photo-frame">
+            <img src="1000022615.jpg" alt="Amanda Pritzie" class="pi-photo">
+          </div>
+        </div>
+        <div class="pi-fields-col">
+          <div class="pi-field-row">
+            <span class="pi-field-label">PANGALAN <span class="pi-italic">/ GIVEN NAME</span></span>
+            <span class="pi-field-value">AMANDA PRITZIE</span>
+          </div>
+          <div class="pi-field-row">
+            <span class="pi-field-label">APELYIDO <span class="pi-italic">/ SURNAME</span></span>
+            <span class="pi-field-value">CABAUATAN</span>
+          </div>
+          <div class="pi-field-row">
+            <span class="pi-field-label">LUGAR <span class="pi-italic">/ PLACE / RECEPTION</span></span>
+            <span class="pi-field-value">WINFORD RESORT AND CASINO<br>MANILA BALLROOM</span>
+          </div>
+        </div>
+        <div class="pi-flag-thumb">
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" width="70" height="70">
+            <defs>
+              <clipPath id="thumbClip">
+                <ellipse cx="40" cy="36" rx="22" ry="28"/>
+              </clipPath>
+            </defs>
+            <!-- Fingerprint loops in Philippine flag colors -->
+            <g clip-path="url(#thumbClip)" opacity="0.85">
+              <ellipse cx="40" cy="36" rx="22" ry="28" fill="none" stroke="#0038A8" stroke-width="1.2"/>
+              <ellipse cx="40" cy="36" rx="18" ry="23" fill="none" stroke="#CE1126" stroke-width="1.2"/>
+              <ellipse cx="40" cy="36" rx="14" ry="18" fill="none" stroke="#FCD116" stroke-width="1.2"/>
+              <ellipse cx="40" cy="36" rx="10" ry="13" fill="none" stroke="#0038A8" stroke-width="1.2"/>
+              <ellipse cx="40" cy="36" rx="6" ry="8" fill="none" stroke="#CE1126" stroke-width="1.2"/>
+              <ellipse cx="40" cy="36" rx="3" ry="4" fill="none" stroke="#FCD116" stroke-width="1.2"/>
+            </g>
+            <text x="40" y="72" text-anchor="middle" font-family="monospace" font-size="6" fill="#CE1126" letter-spacing="0.5">PHILIPPINES</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- MRZ / barcode strip -->
+      <div class="pi-mrz-strip">
+        <span class="pi-mrz-text">&lt;&lt;&lt;&lt;&lt;AMANDA&lt;&lt;&lt;&lt;&lt;&lt;PRITZIE&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;CABAUATAN&lt;&lt;</span>
+        <span class="pi-mrz-text">&gt;PHL05162026&lt;</span>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <!-- CARDS WRAPPER -->
 <div class="cards-wrapper">
@@ -2465,7 +2820,7 @@ nav{
       <div class="entourage-group-header">
         <span class="entourage-group-icon">🕯️</span>
         <div>
-          <div class="entourage-group-title">Candles</div>
+          <div class="entourage-group-title">18 Candles</div>
           <div class="entourage-group-num">Twenty Ladies</div>
         </div>
         <span class="entourage-group-icon">🕯️</span>
