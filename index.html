@@ -2250,38 +2250,51 @@ nav{
 }
 
 .pi-stamp-tallinn {
-  border: 2.5px solid #444;
-  color: #444;
+  border: 2.5px solid #333;
+  color: #333;
   transform: rotate(-4deg);
-  background: rgba(0,0,0,0.02);
-  padding: 7px 10px;
-  min-width: 90px;
+  background: rgba(255,255,255,0.85);
+  padding: 7px 9px 8px;
+  width: 140px;
+  min-width: 140px;
+  max-width: 140px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-radius: 2px;
 }
 .pi-stamp-tallinn .pi-stamp-top-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 2px;
 }
 .pi-stamp-tallinn .est-stars {
-  font-size: 7px;
-  letter-spacing: 0.5px;
-  line-height: 1.1;
+  font-size: 6.5px;
+  letter-spacing: 1px;
+  line-height: 1.3;
   text-align: left;
+  color: #333;
 }
 .pi-stamp-tallinn .est-plane {
-  font-size: 14px;
-  border: 1.5px solid #444;
-  padding: 1px 3px;
+  border: 1.5px solid #333;
+  padding: 2px 5px;
   border-radius: 2px;
+  font-size: 13px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .pi-stamp-tallinn .est-date {
-  font-size: 11px;
+  font-size: 13px;
   color: #CC0000;
   letter-spacing: 1.5px;
   font-weight: bold;
-  margin: 3px 0 2px;
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
 }
 .pi-stamp-tallinn .est-bottom-row {
   display: flex;
@@ -2291,11 +2304,15 @@ nav{
   gap: 4px;
 }
 .pi-stamp-tallinn .est-arrow {
-  font-size: 14px;
-  border: 1.5px solid #444;
-  padding: 1px 3px;
+  border: 1.5px solid #333;
+  padding: 2px 5px;
   border-radius: 2px;
+  font-size: 12px;
   line-height: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .pi-stamp-tallinn .est-city {
   text-align: right;
@@ -2303,6 +2320,7 @@ nav{
   font-weight: bold;
   letter-spacing: 1px;
   line-height: 1.4;
+  color: #333;
 }
 
 /* ── Data page ── */
@@ -2371,8 +2389,8 @@ nav{
 .pi-photo-col { flex-shrink: 0; }
 
 .pi-photo-frame {
-  width: 110px;
-  height: 130px;
+  width: 170px;
+  height: 205px;
   border: 2px solid #bbb;
   overflow: hidden;
   background: #eee;
@@ -2440,14 +2458,22 @@ nav{
 @media (max-width: 600px) {
   .passport-info-section { padding: 0 12px 40px; }
   .pi-data-page { padding: 14px 14px 12px; }
-  .pi-stamps-row { padding: 10px 10px 8px; gap: 8px; }
+  .pi-stamps-row { padding: 10px 10px 8px; gap: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; }
   .pi-stamp { min-width: 60px; padding: 6px 8px; }
+  .pi-stamp-tallinn { width: 130px; min-width: 130px; max-width: 130px; transform: rotate(-4deg); }
   .pi-stamp-text { font-size: 9px; }
   .pi-main-data { gap: 12px; }
-  .pi-photo-frame { width: 82px; height: 100px; }
+  .pi-photo-frame { width: 125px; height: 152px; }
   .pi-field-value { font-size: 12px; }
   .pi-flag-thumb { display: none; }
   .pi-meta-row { gap: 12px; }
+
+  /* Stamp order on mobile: Canada, NYC, London on top row; Deutschland + Tallinn side by side on second row */
+  .pi-stamp-canada  { order: 1; }
+  .pi-stamp-nyc     { order: 2; }
+  .pi-stamp-london  { order: 3; }
+  .pi-stamp-de      { order: 4; }
+  .pi-stamp-tallinn { order: 5; }
 }
 </style>
 </head>
